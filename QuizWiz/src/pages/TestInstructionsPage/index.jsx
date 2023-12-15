@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const TestInstructionsPage = () => {
   return (
     <>
-    <div>TestInstructionsPage</div>
+    <h1>TestInstructionsPage</h1>
     <p><Link to="/test/topics" >Topics</Link></p>
     </>
   )
