@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const TopicsPage = () => {
   return (
     <>
-    <div>TopicsPage</div>
+    <h1>TopicsPage</h1>
     <p><Link to="/test/topics/quiz" >Quiz</Link></p>
     </>
   )

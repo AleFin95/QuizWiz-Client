@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const LearnPage = () => {
   return (
     <>
-    <div>LearnPage</div>
+    <h1>LearnPage</h1>
     <Link to="/learn/timer">Set timer</Link> 
     </>
   )
