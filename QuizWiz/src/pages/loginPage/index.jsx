@@ -17,14 +17,18 @@ const Login = () => {
         navigateTo("/")
     }
 
+    function handleSignUpClick() {
+        navigateTo("/signup")
+    }
+
 
   return (
     <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleInput} value={inputValue} placeholder='username' autoComplete="off"/>
         <input type="password"  placeholder="password" autoComplete="off"></input>
         <br/>
-        <input type="submit"/>
-        <p>No account? <button type = 'button' > Sign up</button></p>
+        <input type="submit" value="Log in"/>
+        <p>No account? <button type = 'button' onClick={handleSignUpClick} > Sign up</button></p>
     </form>
   )
 }

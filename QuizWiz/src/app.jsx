@@ -6,6 +6,7 @@ import { PageWrapper } from './components';
 import './assets/app.css'
 
 import { AuthProvider } from './contexts';
+import SignUpComponent from './components';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <PageWrapper />
         <Routes>
           <Route path="/login" element={<Pages.Login />}/>
+          <Route path="/signup" element={<SignUpComponent />} /> 
           <Route path="/" element={<ProtectedRoute redirectTo="/login"/>}>
             <Route index element={<Pages.HomePage />}/>
           </Route>
