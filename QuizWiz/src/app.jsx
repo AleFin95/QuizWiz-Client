@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route} from 'react-router-dom';
-
+import ProtectedRoute from "./ro"
 import * as Pages from './pages'
 import { PageWrapper } from './components';
 import './assets/app.css'
@@ -11,7 +11,10 @@ function App() {
       <>
         <PageWrapper />
         <Routes>
-          <Route path="/" element={<Pages.HomePage />} />
+          <Route path="/" element={<ProtectedRoute redirectTo="/login"/>}>
+            <Route index element={<Pages.HomePage />}> </Route>
+          </Route>
+          <Route path="/login" element={<Pages.Login />}/>
           <Route path="/mynotes" element={<Pages.MyNotesPage />} />
   
           <Route path="/learn/*" element={
