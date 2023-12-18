@@ -11,7 +11,6 @@ describe('HomePage', () => {
       
         expect(screen.getByRole('heading', { name: /home/i })).toBeInTheDocument();
 
-   
         expect(screen.getByRole('link', { name: /learn and take notes/i })).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /go to quiz/i })).toBeInTheDocument();
 
