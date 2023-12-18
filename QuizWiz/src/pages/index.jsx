@@ -1,3 +1,5 @@
+export {default as Login} from "./loginPage"
+
 export {default as HomePage} from "./HomePage"
 export {default as TimerPage} from "./TimerPage"
 export {default as AddNotesPage} from "./AddNotesPage"
