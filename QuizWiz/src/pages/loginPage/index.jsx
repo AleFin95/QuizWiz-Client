@@ -26,14 +26,20 @@ const Login = () => {
 
   return (
     <>
+    <h2>Log In</h2>
     <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleInput} value={inputValue} placeholder='username' autoComplete="off"/>
+        <br/>
         <input type="password"  placeholder="password" autoComplete="off"></input>
         <br/>
+        <br/>
         <input type="submit" value="Log in"/>
+        <br/>
         <p>No account? <button type = 'button' onClick={handleSignUpClick} > Sign up</button></p>
     
     </form>
+    <br/>
+    <br/>
     {showSignUp && <SignUpComponent />}
     </>
   )
