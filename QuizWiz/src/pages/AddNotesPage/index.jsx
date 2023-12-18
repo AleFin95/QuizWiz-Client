@@ -1,27 +1,13 @@
-//AddNotes
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"
-// import { readSubject } from "../../assets/api";
 import NoteForm from "../../components/NoteForm"
 
 function AddNotesPage() {
-    // const { subjectId } = useParams();
-    // const [Subject, setSubject] = useState({})
-
-    // useEffect(() => {
-    //     setSubject({})
-    //     async function loadSubject() {
-    //         const response = await readSubject(subjectId)
-    //         setSubject(response)
-    //     }
-    //     loadSubject();
-    // }, [subjectId])
+    // localStorage.setItem("token","7f9b60db-edd1-4e67-b46b-156c6e15e592")
 
     return (
         <div>
   
-            <h2> Add Note</h2>
-            {/* <NoteForm subjectId={subjectId} /> */}
+            <h1>Add Note</h1>
+            
             <NoteForm />
         </div>
     )

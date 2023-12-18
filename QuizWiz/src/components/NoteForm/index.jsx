@@ -1,21 +1,10 @@
-//NoteForm
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-async function createNote(subjectId, note) {
+async function createNote(note) {
 
-// Retrieve user_id from local storage
-// const userId = localStorage.getItem('user_id');
-   // Assign user_id to the note
-    // note.userId = userId;
-    // note.userId=1
-    console.log("note in the CreateNote=",note)
-  
-  // const noteData = { ...note, subjectId };
-  // const noteData = { ...note  };
   delete note.subject;
-
-  // console.log("subjectId in the CreateNote after note subj=",note.subjectId)
+ 
   const options = {
     method: "POST",
     headers: {
@@ -27,18 +16,17 @@ async function createNote(subjectId, note) {
     body: JSON.stringify(note)
    
   };
-  console.log("options=",options)
-  // return await fetch("http://localhost:3000/notes", options); //route notes doesnt exist yet
+
   const response = await fetch("http://localhost:3000/notes", options);
 
   if (!response.ok) {
-    // Handle error, throw an exception, or return an error object
+    
     console.error(`Failed to create note: ${response.statusText}`);
-    // Optionally, you can throw an exception
+    
     throw new Error(`Failed to create note: ${response.statusText}`);
   }
 
-  // Parse the response body as JSON or return the response directly
+  
   const responseData = await response.json();
   console.log("Response data:", responseData);
 
@@ -64,46 +52,33 @@ async function createSubject(subject) {
     // Handle error, throw an exception, or return an error object
     throw new Error(`Failed to create subject: ${response.statusText}`);
   }
-
-  // Parse the response body as JSON
-  const createdSubject = await response.json();
-
-  // Now, createdSubject should contain the created subject with its ID
+ 
+  const createdSubject = await response.json();  
   const createdSubjectId = createdSubject._id;
-
-  // return createdSubjectId;
-  console.log("line 52 subjectId= ",createdSubjectId )
+  
   return createdSubjectId;
 }
 
 
-// async function updateNote(updatedNote) {
 
-//   const options = {
-//     method: "PATCH",
-//     headers,
-//     body: JSON.stringify(updatedNote),
-//   };
-//   return await fetch(`http://localhost:3000/notes/${updatedNote.id}`, options);
-// }
 
 function NoteForm({ note = ""}) {
-    const navigate = useNavigate();
+    
 
     useEffect(() => {
         if (note) {
-            // setFormData({title: note.title, content: note.content, subject: note.subject, note_id: note.note_id})
+            
             setFormData({title: note.title, content: note.content, subject: note.subject})
         }
     }, [note])
 
 // Innitial state for the Form
     const initialFormState = {
-        // id: "",
+        
         title: "",
         content: "",
         subject: "",
-        //subjectId: subjectId should be created???
+        
     }
 
     const [formData, setFormData] = useState(initialFormState)
@@ -119,7 +94,7 @@ function NoteForm({ note = ""}) {
 
         console.log("line 97 subjectId= ",subjectId)
         
-        await createNote(subjectId, formData);
+        await createNote(formData);
         setFormData({ ...initialFormState }); // Reset form data
         // navigate(`/subjects/${subjectId}`);
     }
