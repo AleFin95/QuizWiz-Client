@@ -6,7 +6,7 @@ import { PageWrapper } from './components';
 import './assets/app.css'
 
 import { AuthProvider } from './contexts';
-import SignUpComponent from './components';
+import {SignUpComponent} from './components';
 
 
 function App() {
