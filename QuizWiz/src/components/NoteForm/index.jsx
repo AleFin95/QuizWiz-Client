@@ -9,22 +9,22 @@ async function createNote(subjectId, note) {
    // Assign user_id to the note
     // note.userId = userId;
     // note.userId=1
-    console.log("subjectId in the CreateNote=",subjectId)
+    console.log("note in the CreateNote=",note)
   
   // const noteData = { ...note, subjectId };
-  const noteData = { ...note  };
-  delete noteData.subject;
+  // const noteData = { ...note  };
+  delete note.subject;
 
-  console.log("subjectId in the CreateNote after note subj=",note.subjectId)
+  // console.log("subjectId in the CreateNote after note subj=",note.subjectId)
   const options = {
     method: "POST",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      // Authorization: localStorage.getItem('token')
+      authorization: localStorage.getItem('token')
       
   },
-    body: JSON.stringify(noteData)
+    body: JSON.stringify(note)
    
   };
   console.log("options=",options)
@@ -77,15 +77,15 @@ async function createSubject(subject) {
 }
 
 
-async function updateNote(updatedNote) {
+// async function updateNote(updatedNote) {
 
-  const options = {
-    method: "PATCH",
-    headers,
-    body: JSON.stringify(updatedNote),
-  };
-  return await fetch(`http://localhost:3000/notes/${updatedNote.id}`, options);
-}
+//   const options = {
+//     method: "PATCH",
+//     headers,
+//     body: JSON.stringify(updatedNote),
+//   };
+//   return await fetch(`http://localhost:3000/notes/${updatedNote.id}`, options);
+// }
 
 function NoteForm({ note = ""}) {
     const navigate = useNavigate();
@@ -114,12 +114,9 @@ function NoteForm({ note = ""}) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // noteId ? await updateNote(formData) : await createNote(subjectId, formData)
-        // noteId ? navigate(`/subjects/${subjectId}`) : setFormData({...initialFormState})
 
         const subjectId=await createSubject({name: formData.subject})
-        // console.log("line 97 subjectId= ",subjectId)
-        // const subjectId="65805adc9088ada388b43f27"
+
         console.log("line 97 subjectId= ",subjectId)
         
         await createNote(subjectId, formData);
