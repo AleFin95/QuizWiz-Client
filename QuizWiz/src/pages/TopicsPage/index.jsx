@@ -5,7 +5,7 @@ const TopicsPage = () => {
   return (
     <>
     <h1>TopicsPage</h1>
-    <p><Link to="/test/topics/quiz" >Quiz</Link></p>
+    <p><Link to="/test/quiz" >Quiz</Link></p>
     </>
   )
 }

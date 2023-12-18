@@ -17,9 +17,8 @@ function App() {
           <Route path="/learn/*" element={
             <>
               <Routes>
-                <Route path="/" element={<Pages.LearnPage />} />
-                <Route path="timer" element={<Pages.TimerPage />} />
-                <Route path="timer/addnotes" element={<Pages.AddNotesPage />} />
+                <Route path="/" element={<Pages.TimerPage />} />
+                <Route path="addnotes" element={<Pages.AddNotesPage />} />
               </Routes>
             </>
           } />
@@ -27,10 +26,9 @@ function App() {
           <Route path="/test/*" element={
             <> 
             <Routes>
-              <Route path="/" element={<Pages.TestInstructionsPage />} />
-              <Route path="topics" element={<Pages.TopicsPage />} />
-              <Route path="topics/quiz" element={<Pages.QuizModePage />} />
-              <Route path="topics/quiz/results" element={<Pages.ResultsPage />} />
+              <Route path="/"  element={<Pages.TopicsPage />} />
+              <Route path="quiz" element={<Pages.QuizModePage />} />
+              <Route path="quiz/results" element={<Pages.ResultsPage />} />
             </Routes>
             </> 
           } />
