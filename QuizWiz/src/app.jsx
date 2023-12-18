@@ -1,17 +1,25 @@
 import React from 'react';
 import { Routes, Route} from 'react-router-dom';
-
+import ProtectedRoute from "./routes"
 import * as Pages from './pages'
 import { PageWrapper } from './components';
 import './assets/app.css'
 
+import { AuthProvider } from './contexts';
+import {SignUpComponent} from './components';
+
 
 function App() {
     return (
-      <>
+      <AuthProvider>
         <PageWrapper />
         <Routes>
-          <Route path="/" element={<Pages.HomePage />} />
+          <Route path="/login" element={<Pages.Login />}/>
+          <Route path="/signup" element={<SignUpComponent />} /> 
+          <Route path="/" element={<ProtectedRoute redirectTo="/login"/>}>
+            <Route index element={<Pages.HomePage />}/>
+          </Route>
+
           <Route path="/mynotes" element={<Pages.MyNotesPage />} />
   
           <Route path="/learn/*" element={
@@ -35,7 +43,7 @@ function App() {
   
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Routes>
-      </>
+    </AuthProvider>
     );
   }
 
