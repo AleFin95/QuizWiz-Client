@@ -18,13 +18,13 @@ const Login = () => {
     }
 
 
-
-
   return (
     <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleInput} value={inputValue} placeholder='username' autoComplete="off"/>
+        <input type="password"  placeholder="password" autoComplete="off"></input>
         <br/>
         <input type="submit"/>
+        <p>No account? <button type = 'button' > Sign up</button></p>
     </form>
   )
 }
