@@ -5,7 +5,7 @@ const TimerPage = () => {
   return (
     <>
     <h1>TimerPage</h1>
-    <p><Link to="/learn/timer/addnotes" >Add your Notes</Link></p>
+    <p><Link to="/learn/addnotes" >Add your Notes</Link></p>
     </>
   )
 }

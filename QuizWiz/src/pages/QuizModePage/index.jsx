@@ -5,7 +5,7 @@ const QuizModePage = () => {
   return (
     <>
     <h1>QuizModePage</h1>
-    <p><Link to="/test/topics/quiz/results" >Results</Link></p>
+    <p><Link to="/test/quiz/results" >Results</Link></p>
     </>
   )
 }
