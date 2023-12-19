@@ -115,10 +115,14 @@ header {
   font-weight: bold;
   margin: 0; 
   text-shadow:
-    -4px -4px 0 #C0A3C2,   
-    4px -4px 0 #C0A3C2,    
-    -4px 4px 0 #C0A3C2,    
-    4px 4px 0 #C0A3C2;     
+  -10px -10px 0 #C0A3C2,
+  0   -10px 0 #C0A3C2,
+  10px -10px 0 #C0A3C2,
+  10px  0   0 #C0A3C2,
+  10px  10px 0 #C0A3C2,
+  0    10px 0 #C0A3C2,
+ -10px  10px 0 #C0A3C2,
+ -10px  0   0 #C0A3C2;      
   -webkit-background-clip: text; 
   background-clip: text;
 }
@@ -147,9 +151,6 @@ header {
 }
 
 
-/* app.css */
-
-/* Style the main page wrapper */
 main {
   background-image: url('/HomePage.png'); /* Background image path */
   background-size: cover; /* Cover the entire element with the background image */
@@ -171,19 +172,18 @@ h1 {
   font-weight: bold;
   margin: 0; 
   text-shadow:
-  -1px -1px 0 #C0A3C2,
-   0   -1px 0 #C0A3C2,
-   1px -1px 0 #C0A3C2,
-   1px  0   0 #C0A3C2,
-   1px  1px 0 #000,
-   0    1px 0 #000,
-  -1px  1px 0 #000,
-  -1px  0   0 #000;    
+  -10px -10px 0 #C0A3C2,
+   0   -10px 0 #C0A3C2,
+   10px -10px 0 #C0A3C2,
+   10px  0   0 #C0A3C2,
+   10px  10px 0 #C0A3C2,
+   0    10px 0 #C0A3C2,
+  -10px  10px 0 #C0A3C2,
+  -10px  0   0 #C0A3C2;    
   -webkit-background-clip: text; 
   background-clip: text;
 }
 
-/* Style the list */
 ul {
   list-style: none; /* Remove list bullets */
   padding: 0; /* Remove list padding */
@@ -196,8 +196,8 @@ li {
 
 /* Style links */
 a {
-  color: white; /* Link text color */
-  text-decoration: none; /* Remove underline */
+  color: rgb(127, 50, 50); /* Link text color */
+  text-dergb(208, 37, 37)ion: none; /* Remove underline */
   font-weight: bold; /* Make links bold */
   font-size: 1.2rem; /* Adjust font size as needed */
 }
