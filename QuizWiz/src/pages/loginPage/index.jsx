@@ -50,6 +50,7 @@ const Login = () => {
 
     return (
         <div className="loginPage"> {}
+        <div classname="login">
             <h2>Log In</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" onChange={handleInput} value={inputValue} placeholder='email' autoComplete="off"/>
@@ -64,6 +65,7 @@ const Login = () => {
             <br/>
             <br/>
             {showSignUp && <SignUpComponent />}
+            </div>
         </div>
     )
 }
