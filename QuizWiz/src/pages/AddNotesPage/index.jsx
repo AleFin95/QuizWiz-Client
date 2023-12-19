@@ -1,9 +1,16 @@
-import React from 'react'
+import NoteForm from "../../components/NoteForm"
 
-const AddNotesPage = () => {
-  return (
-    <h1>AddNotesPage</h1>
-  )
+function AddNotesPage() {
+    // localStorage.setItem("token","7f9b60db-edd1-4e67-b46b-156c6e15e592")
+
+    return (
+        <div>
+  
+            <h1>Add Note</h1>
+            
+            <NoteForm />
+        </div>
+    )
 }
 
-export default AddNotesPage
+export default AddNotesPage;
