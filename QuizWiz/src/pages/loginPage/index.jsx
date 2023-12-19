@@ -62,13 +62,10 @@ const Login = () => {
     <br/>
     <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="password" autoComplete="off"></input>
     <br/>
-    <br/>
     <input type="submit" value="Log in" className="login-button" />
-    <br/>
     <p>No account? <button type='button' onClick={handleSignUpClick}>Sign up</button></p>
   </form>
-  <br/>
-  <br/>
+  
   {showSignUp && <SignUpComponent />}
 </div>
 
