@@ -25,6 +25,17 @@ const toggleTopic = (topicId) => {
   });
 };
 
+const onEnterPress = () => {
+  // Get the first topic that matches the filter
+  const filteredTopics = topics.data.filter(t => t.name.toLowerCase().includes(textFilter.toLowerCase()));
+
+  if (filteredTopics.length > 0) {
+    const firstTopic = filteredTopics[0];
+    toggleTopic(firstTopic._id);
+  }
+};
+
+
 function displayTopics() {
   if (!topics || !topics.data || !Array.isArray(topics.data)) {
     return null; 
@@ -38,6 +49,7 @@ function displayTopics() {
 }
 
 const startQuiz = () => {
+  localStorage.setItem('selectedTopics', JSON.stringify(selectedTopics))
   // Use selectedTopics to start the quiz
   console.log('Selected Topics:', selectedTopics);
   // Redirect to the quiz page or perform any other action
@@ -49,6 +61,7 @@ const startQuiz = () => {
     <TopicsFilter
         textFilter={textFilter}
         setTextFilter={setTextFilter}
+        onEnterPress={onEnterPress}
         />
     <div>
       { displayTopics() }
