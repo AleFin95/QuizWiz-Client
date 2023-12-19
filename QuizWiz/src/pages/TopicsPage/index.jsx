@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import { TopicsFilter, TopicLabel } from '../../components';
+import { QuizInstructionsWrapper } from '../../components';
 
 const TopicsPage = () => {
   const [topics, setTopics] = useState([]);
   const [textFilter, setTextFilter] = useState("");
   const [selectedTopics, setSelectedTopics] = useState([]);
+  const navigateTo = useNavigate()
 
 
   useEffect(() => {
@@ -53,6 +56,7 @@ const startQuiz = () => {
   // Use selectedTopics to start the quiz
   console.log('Selected Topics:', selectedTopics);
   // Redirect to the quiz page or perform any other action
+  navigateTo('/test/quiz');
 };
 
   return (
@@ -71,6 +75,7 @@ const startQuiz = () => {
           Start Quiz
         </button>
     </p>
+    <QuizInstructionsWrapper />
     </>
   )
 }
