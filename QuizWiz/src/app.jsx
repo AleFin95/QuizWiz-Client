@@ -11,7 +11,9 @@ import {SignUpComponent} from './components';
 
 function App() {
     return (
+      
       <AuthProvider>
+       
         <PageWrapper />
         <Routes>
           <Route path="/login" element={<Pages.Login />}/>
@@ -22,14 +24,13 @@ function App() {
 
           <Route path="/mynotes" element={<Pages.MyNotesPage />} />
   
-          <Route path="/learn/*" element={
-            <>
-              <Routes>
-                <Route path="/" element={<Pages.TimerPage />} />
+          <Route path="/learn"> 
+           
+                <Route index element={<Pages.TimerPage />} />
                 <Route path="addnotes" element={<Pages.AddNotesPage />} />
-              </Routes>
-            </>
-          } />
+              
+               
+          </Route>
   
           <Route path="/test/*" element={
             <> 
@@ -43,6 +44,7 @@ function App() {
   
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Routes>
+        
     </AuthProvider>
     );
   }
