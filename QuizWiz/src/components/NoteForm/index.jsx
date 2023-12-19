@@ -16,8 +16,10 @@ async function createNote(note) {
     body: JSON.stringify(note)
    
   };
-
-  const response = await fetch("http://localhost:3000/notes", options);
+console.log("options",options)
+  // const response = await fetch("http://localhost:3000/notes", options);
+  const response = await fetch("https://quizwiz-api.onrender.com/notes", options);
+  
 
   if (!response.ok) {
     
@@ -46,7 +48,9 @@ async function createSubject(subject) {
     body: JSON.stringify(subject)
    
   };
-  const response = await fetch("http://localhost:3000/subjects", options);
+  // const response = await fetch("http://localhost:3000/subjects", options);
+  const response = await fetch("https://quizwiz-api.onrender.com/subjects", options);
+  
   console.log("REspone from create subject=", response)
   if (!response.ok) {
     // Handle error, throw an exception, or return an error object
