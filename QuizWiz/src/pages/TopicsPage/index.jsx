@@ -6,7 +6,7 @@ import { QuizInstructionsWrapper } from '../../components';
 const TopicsPage = () => {
   const [topics, setTopics] = useState([]);
   const [textFilter, setTextFilter] = useState("");
-  const [selectedTopics, setSelectedTopics] = useState([]);
+  const [selectedTopic, setSelectedTopic] = useState(null);
   const navigateTo = useNavigate()
 
 
@@ -21,12 +21,9 @@ const TopicsPage = () => {
     loadTopics();
 }, [])
 
-const toggleTopic = (topicId) => {
-  setSelectedTopics((prev) => {
-    const isSelected = prev.includes(topicId);
-    return isSelected ? prev.filter((id) => id !== topicId) : [...prev, topicId];
-  });
-};
+    const toggleTopic = (topicId) => {
+      setSelectedTopic((prev) => (prev === topicId ? null : topicId));
+    };
 
 const onEnterPress = () => {
   // Get the first topic that matches the filter
@@ -47,14 +44,14 @@ function displayTopics() {
   return topics.data
   .filter(t => textFilter.length === 0 || t.name.toLowerCase().includes(textFilter.toLowerCase()))
     .map(t => (
-      <TopicLabel key={t._id} id={t._id} name={t.name} onClick={() => toggleTopic(t._id)} selected={selectedTopics.includes(t._id)} />
+      <TopicLabel key={t._id} id={t._id} name={t.name} onClick={() => toggleTopic(t._id)} selected={selectedTopic === t._id} />
     ));
 }
 
 const startQuiz = () => {
-  localStorage.setItem('selectedTopics', JSON.stringify(selectedTopics))
+  localStorage.setItem('selectedTopic', JSON.stringify(selectedTopic))
   // Use selectedTopics to start the quiz
-  console.log('Selected Topics:', selectedTopics);
+  console.log('Selected Topic:', selectedTopic);
   // Redirect to the quiz page or perform any other action
   navigateTo('/test/quiz');
 };
