@@ -7,7 +7,7 @@ function AddNotesPage() {
     
     const {state}=useLocation()
     
-    const [initialMinutes, setInitialMinutes] = useState(state.minutes);
+    const [initialMinutes, setInitialMinutes] = useState(state === null ? 10 : state.minutes);
     const { remainingSeconds, setRemainingSeconds } = useAuth()
     const [isRunning, setIsRunning] = useState(false);
     

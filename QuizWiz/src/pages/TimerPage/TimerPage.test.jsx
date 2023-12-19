@@ -20,7 +20,7 @@ describe('TimerPage Component', () => {
         expect(screen.getByText(/Countdown Timer/i)).toBeInTheDocument();
     });
 
-    it('updates countdown timer when start button is clicked', async () => {
+    it('initial timer value', async () => {
     
         // Initial timer value
         const timerTextBefore = screen.getByText(/Countdown Timer:/i).textContent;
