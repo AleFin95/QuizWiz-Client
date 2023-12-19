@@ -10,16 +10,13 @@ body {
   font-family: "Poppins", sans-serif;
   text-align: center;
   font-weight: 300;
-  /* background-image: url(../assets/landing.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
   position: relative;
   color: rgb(87, 91, 120);
+  
 }
 
 header {
-  background-color: #333;
+  background-color: rgba(237, 200, 200, 0);
   color: #fff;
   padding: 10px 0;
   text-align: center;
@@ -33,4 +30,18 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
+.loginPage{
+  background: url('/LandingPage.png') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed; /* Fixed or absolute position */
+  
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
 
