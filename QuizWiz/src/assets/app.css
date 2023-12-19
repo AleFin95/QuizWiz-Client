@@ -145,3 +145,9 @@ header {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+.main{
+    background-image: url('/HomePage.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+  }

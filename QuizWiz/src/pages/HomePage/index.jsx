@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import '../../assets/app.css';
 
 const HomePage = () => {
-    return <main>
+    return
+     <main>
         <h1>Home </h1>
         <ul>
             <li><Link to="/learn" >Learn and Take Notes</Link></li>
