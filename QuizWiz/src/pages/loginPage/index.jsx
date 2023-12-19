@@ -50,22 +50,23 @@ const Login = () => {
 
     return (
         <div className="loginPage"> {}
-        <div classname="login">
-            <h2>Log In</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="text" onChange={handleInput} value={inputValue} placeholder='email' autoComplete="off"/>
-                <br/>
-                <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="password" autoComplete="off"></input>
-                <br/>
-                <br/>
-                <input type="submit" value="Log in" />
-                <br/>
-                <p>No account? <button type='button' onClick={handleSignUpClick}>Sign up</button></p>
-            </form>
-            <br/>
-            <br/>
-            {showSignUp && <SignUpComponent />}
-            </div>
+        <div className="login">
+  <h2>Log In</h2>
+  <form onSubmit={handleSubmit}>
+    <input type="text" onChange={handleInput} value={inputValue} placeholder='email' autoComplete="off"/>
+    <br/>
+    <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="password" autoComplete="off"></input>
+    <br/>
+    <br/>
+    <input type="submit" value="Log in" />
+    <br/>
+    <p>No account? <button type='button' onClick={handleSignUpClick}>Sign up</button></p>
+  </form>
+  <br/>
+  <br/>
+  {showSignUp && <SignUpComponent />}
+</div>
+
         </div>
     )
 }
