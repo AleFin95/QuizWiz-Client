@@ -146,7 +146,8 @@ header {
   margin-bottom: 20px;
 }
 
-.main{
+
+main{
     background-image: url('/HomePage.png'); 
     background-size: cover; 
     background-repeat: no-repeat;
