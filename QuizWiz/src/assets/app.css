@@ -15,22 +15,6 @@ body {
   
 }
 
-header {
-  background-color: rgba(237, 200, 200, 0);
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
 .loginPage{
   background: url('/LandingPage.png') no-repeat center center fixed;
   background-size: cover;
@@ -162,9 +146,13 @@ main {
   justify-content: center; /* Center vertically */
   text-align: center; /* Center text */
   color: white; /* Text color */
+  overflow: auto;
 }
 
-/* Style the heading */
+.login::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   font-family: Anton;
   font-size: 10em; 
@@ -196,13 +184,37 @@ li {
 
 /* Style links */
 a {
-  color: rgb(127, 50, 50); /* Link text color */
-  text-dergb(208, 37, 37)ion: none; /* Remove underline */
+  color: rgb(177, 244, 177); /* Link text color */
+  text-decoration:none;
+  font-weight: bold; /* Make links bold */
+  font-size: 1.2rem; 
+}
+
+/* app.css */
+
+/* Style the navigation bar (nav) */
+nav {
+  background-color: #333; /* Background color of the navigation bar */
+  padding: 1rem; /* Add padding to create spacing around the links */
+}
+
+/* Style the navigation links (NavLinks) */
+nav a {
+  color: white; /* Text color for links */
+  text-decoration: none; /* Remove underline from links */
+  margin-right: 1rem; /* Add spacing between links */
   font-weight: bold; /* Make links bold */
   font-size: 1.2rem; /* Adjust font size as needed */
 }
 
 /* Hover effect for links */
-a:hover {
+nav a:hover {
   text-decoration: underline; /* Add underline on hover */
+}
+
+/* Style the active link */
+nav a.active {
+  background-color: #555; /* Background color for the active link */
+  border-radius: 4px; /* Add rounded corners for the active link */
+  padding: 0.5rem 1rem; /* Add padding to highlight the active link */
 }
