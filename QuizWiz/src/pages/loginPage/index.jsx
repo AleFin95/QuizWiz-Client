@@ -1,14 +1,15 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../../contexts'
 import {SignUpComponent} from "../../components"
+import {useAuth} from "../../contexts"
 
 const Login = () => {
     const [inputValue, setInputValue] = useState ("")
     const [password, setPassword] = useState("");
     const [showSignUp, setShowSignUp] = useState(false);
-    const navigateTo = useNavigate ()
-    const {setUser} = useAuth()
+    const navigateTo = useNavigate()
+    const { setToken } = useAuth();
+
 
     function handleInput(e) {
         setInputValue(e.target.value);
@@ -29,9 +30,10 @@ const Login = () => {
       
           const response = await fetch("https://quizwiz-api.onrender.com/users/login", options);
       
-          if (response.ok) {
+          if (response.status === 200) {
             const { token } = await response.json();
-            setUser(token);
+            localStorage.setItem('token', token)
+            setToken(token)
             navigateTo('/');
           } else {
             console.error("Login failed");
