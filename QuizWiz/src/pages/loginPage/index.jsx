@@ -4,6 +4,8 @@ import {SignUpComponent} from "../../components"
 import {useAuth} from "../../contexts"
 import '../../assets/app.css';
 
+
+
 const Login = () => {
     const [inputValue, setInputValue] = useState ("")
     const [password, setPassword] = useState("");
@@ -50,6 +52,9 @@ const Login = () => {
 
     return (
         <div className="loginPage"> {}
+        <div className="loginHeader">
+        <h1>QuizWiz</h1>
+    </div>
         <div className="login">
   <h2>Log In</h2>
   <form onSubmit={handleSubmit}>
