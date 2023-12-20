@@ -8,7 +8,7 @@ function ScoreTable({ score, rank }) {
   return (
         <tr className="tableRow">
           <td className="rankColumn">{rank}</td>
-          <td>{score.username}</td>
+          <td>{score.subjectName}</td>
           <td>{score.value}</td>
         </tr>
   )

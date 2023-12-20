@@ -7,21 +7,25 @@ function Leaderboard() {
   const [scores, setScores]=useState([])
   
   useEffect(() => {
-    //fetch the score data
-    const data = [
-      { "value": 85, "username": "user1" },
-      { "value": 92, "username": "user2" },
-      { "value": 78, "username": "user3" },
-      { "value": 95, "username": "user4" }
-    ]
-    
-    const sortedData = data.sort((a, b) => b.value - a.value);
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch(`http://localhost:3000/scores/token/${token}`);
 
-    //assign the data to a varable
+        if (response.status === 200) {
+          const data = await response.json();
+          const sortedData = data.sort((a, b) => b.value - a.value);
+          setScores(sortedData);
+        } else {
+          throw new Error('Failed to fetch scores');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-    setScores(sortedData)
-
-  },[])
+    fetchData();
+  }, []);
 
 
   return (
@@ -32,7 +36,7 @@ function Leaderboard() {
             <thead>
               <tr>
                 <th>Rank</th>
-                <th>User</th>
+                <th>Subject</th>
                 <th>Score</th>
               </tr>
             </thead>
