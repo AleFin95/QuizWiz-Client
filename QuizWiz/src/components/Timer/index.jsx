@@ -63,33 +63,25 @@ const Timer = ({flag_page}) => {
   }
 
   return (
-    <div>
-     
-
-
-
-      {flag_page === 'quiz' ? (
+    <>
+          {flag_page === 'quiz' ? (
         <>
          <h2>Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h2>
         </>
 
       ) : (
 
-        <>
-        <h1>Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h1>
+        <div className='timer'>
             <label>
                 Set Minutes:
                 <input type="number" min={0} value={initialMinutes} onChange={handleMinutesChange} />
             </label>
 
             <button onClick={handleClick}>Start</button>
-            {/* <button onClick={stopTimer}>Stop</button>
-             <button onClick={resetTimer}>Reset</button> */}
-        </>
+        </div>
         
       )}
-      {/* <button onClick={handleClick} >Start</button> */}
-    </div>
+    </>
   );
 };
 
