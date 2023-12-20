@@ -15,7 +15,6 @@ function Leaderboard() {
       { "value": 95, "username": "user4" }
     ]
     
-    //sort data
     const sortedData = data.sort((a, b) => b.value - a.value);
 
     //assign the data to a varable
