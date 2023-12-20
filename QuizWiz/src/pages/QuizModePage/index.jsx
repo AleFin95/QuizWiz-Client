@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { QuizInstructionsWrapper } from '../../components';
-
+import { AnswersBox, QuizInstructionsWrapper } from '../../components';
 
 const QuizModePage = () => {
   const [questions, setQuestions] = useState([]);
@@ -14,11 +13,13 @@ const QuizModePage = () => {
         console.error('No selected topic ID found.');
         return;
       }
-  
+
       try {
-        const response = await fetch(`https://quizwiz-api.onrender.com/questions?topicId=${selectedTopicId}`);
+        const response = await fetch(
+          `https://quizwiz-api.onrender.com/questions?subjectId=${selectedTopicId.subjectId}`
+        );
         const responseData = await response.json();
-  
+
         if (Array.isArray(responseData.data) && responseData.data.length > 0) {
           setQuestions(responseData.data);
         } else {
@@ -28,7 +29,7 @@ const QuizModePage = () => {
         console.error('Error fetching questions:', error);
       }
     }
-  
+
     loadQuestions();
   }, []);
 
@@ -45,29 +46,48 @@ const QuizModePage = () => {
   };
 
   return (
-    <div className="quiz"> {/* Apply the "container" class */}
-    <h1>QuizModePage</h1>
-    {questions.length > 0 && currentQuestionIndex < questions.length && (
-      <div>
-        <div key={questions[currentQuestionIndex]._id}>
-          <p>{questions[currentQuestionIndex].name}</p>
+    <>
+      <h1>QuizModePage</h1>
+      {questions.length > 0 && currentQuestionIndex < questions.length && (
+        <div>
+          <div key={questions[currentQuestionIndex]._id}>
+            <p>{questions[currentQuestionIndex].name}</p>
+          </div>
+          <div>
+            <AnswersBox />
+          </div>
+          <button
+            onClick={handlePrevQuestion}
+            disabled={currentQuestionIndex === 0}
+          >
+            &lt; Prev Question
+          </button>
+          <button
+            onClick={handleNextQuestion}
+            disabled={currentQuestionIndex === questions.length - 1}
+          >
+            Next Question &gt;
+          </button>
         </div>
-        <button onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0}>
-          &lt; Prev Question
-        </button>
-        <button onClick={handleNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
-          Next Question &gt;
-        </button>
-      </div>
-    )}
-    {currentQuestionIndex === questions.length && (
-      <p>
-        All questions answered! <Link to="/test/quiz/results">See Results</Link>
-      </p>
-    )}
-    <QuizInstructionsWrapper />
-  </div>
-);
+      )}
+      {currentQuestionIndex === questions.length && (
+        <p>
+          All questions answered!{' '}
+          <Link to='/test/quiz/results'>See Results</Link>
+        </p>
+      )}
+      <QuizInstructionsWrapper />
+    </>
+  );
 };
 
 export default QuizModePage;
+
+
+
+
+
+
+
+
+
