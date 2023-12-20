@@ -181,14 +181,14 @@ a {
 
 nav {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  width: 100%; 
-  top: 0; 
-  left: 0; 
+  width: 100%;
+  top: 0;
+  left: 0;
 }
-
 
 /* Style the navigation links (NavLinks) */
 nav a {
@@ -221,10 +221,15 @@ nav a.active {
 }
 
 .page-wrapper,
-.sticky-header,
-nav {
+.sticky-header {
   margin: 0;
   padding: 0;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .navigation-button {
@@ -237,11 +242,6 @@ nav {
   box-sizing: border-box;
   color: #36395a;
   cursor: pointer;
-  display: flex;
-  flex-direction: row; /* Stack content vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  text-align: center; /* Center text */
   font-family: 'JetBrains Mono', monospace;
   height: 48px;
   justify-content: center;
@@ -309,6 +309,7 @@ nav {
   color: #ffffff;
 }
 
+
 .topics {
   background: url('/TopicsPage.png') center/cover no-repeat;
   min-height: 100vh;
@@ -340,21 +341,32 @@ nav {
 }
 /* Style Quiz Istruction page */
 .quiz-instructions-wrapper {
+  position: fixed;
+  top: 10px;
+  right: 10px;
   display: flex;
-  align-items: flex-start; /* Align items to the top */
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .quiz-icon-container {
-  margin-right: 10px;
+  margin-bottom: 10px;
+  z-index: 1001;
+  margin-top: 30px;
 }
 
 .quiz-icon {
+  height: 25px;
   cursor: pointer;
 }
 
 .quiz-instructions-container {
-  display: flex;
+  display: none;
   flex-direction: column;
+  background-color: rgb(224, 240, 245);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
 .visible {
