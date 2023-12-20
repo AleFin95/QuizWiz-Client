@@ -56,14 +56,14 @@ const startQuiz = () => {
   navigateTo('/test/quiz');
 };
 
-  return (
-    <>
+return (
+  <div className="topics"> {}
     <h1>TopicsPage</h1>
     <TopicsFilter
         textFilter={textFilter}
         setTextFilter={setTextFilter}
         onEnterPress={onEnterPress}
-        />
+    />
     <div>
       { displayTopics() }
     </div>
@@ -73,8 +73,8 @@ const startQuiz = () => {
         </button>
     </p>
     <QuizInstructionsWrapper />
-    </>
-  )
+  </div>
+);
 }
 
-export default TopicsPage
+export default TopicsPage;

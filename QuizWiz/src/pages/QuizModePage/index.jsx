@@ -45,29 +45,29 @@ const QuizModePage = () => {
   };
 
   return (
-    <>
-      <h1>QuizModePage</h1>
-      {questions.length > 0 && currentQuestionIndex < questions.length && (
-        <div>
-          <div key={questions[currentQuestionIndex]._id}>
-            <p>{questions[currentQuestionIndex].name}</p>
-          </div>
-          <button onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0}>
-            &lt; Prev Question
-          </button>
-          <button onClick={handleNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
-            Next Question &gt;
-          </button>
+    <div className="quiz"> {/* Apply the "container" class */}
+    <h1>QuizModePage</h1>
+    {questions.length > 0 && currentQuestionIndex < questions.length && (
+      <div>
+        <div key={questions[currentQuestionIndex]._id}>
+          <p>{questions[currentQuestionIndex].name}</p>
         </div>
-      )}
-      {currentQuestionIndex === questions.length && (
-        <p>
-          All questions answered! <Link to="/test/quiz/results">See Results</Link>
-        </p>
-      )}
-      <QuizInstructionsWrapper />
-    </>
-  );
+        <button onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0}>
+          &lt; Prev Question
+        </button>
+        <button onClick={handleNextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
+          Next Question &gt;
+        </button>
+      </div>
+    )}
+    {currentQuestionIndex === questions.length && (
+      <p>
+        All questions answered! <Link to="/test/quiz/results">See Results</Link>
+      </p>
+    )}
+    <QuizInstructionsWrapper />
+  </div>
+);
 };
 
 export default QuizModePage;
