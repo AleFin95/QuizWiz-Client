@@ -31,16 +31,21 @@ const PageWrapper = () => {
     }   
     
     
-    
-    return <>
-        <header>
-            <nav>
-                <NavLink to="/" >Home</NavLink>
-                {token && <NavLink to="/mynotes">My Notes</NavLink>}
-                {token && (<NavLink to="/login" onClick={handleClick}> Log Out</NavLink>)}
-            </nav>
+    return (
+      <div className="page-wrapper">
+        <header className="sticky-header">
+          <nav>
+            <NavLink to="/">Home</NavLink>
+            {token && <NavLink to="/mynotes">My Notes</NavLink>}
+            {token && (
+              <NavLink to="/login" onClick={handleClick}>
+                Log Out
+              </NavLink>
+            )}
+          </nav>
         </header>
-    </>
-};
+      </div>
+    );
+  };
 
 export default PageWrapper;
