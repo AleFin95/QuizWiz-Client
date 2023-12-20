@@ -188,8 +188,13 @@ a {
 }
 
 nav {
-  background: transparent; /* Remove quotes */
-  position: absolute; /* Remove quotes */
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: absolute;
+  width: 100%; 
+  top: 0; 
+  left: 0; 
 }
 
 
