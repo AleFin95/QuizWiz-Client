@@ -1,3 +1,7 @@
 export {default as PageWrapper} from "./PageWrapper"
 export {default as SignUpComponent} from "./SignUpComponent"
 export {default as NoteForm} from "./NoteForm"
+export {default as TopicsFilter} from "./TopicsFilter"
+export {default as TopicLabel} from "./TopicLabel"
+export {default as QuizInstructions} from "./QuizInstructions"
+export {default as QuizInstructionsWrapper} from "./QuizInstructionsWrapper"
