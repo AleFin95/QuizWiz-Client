@@ -1,10 +1,10 @@
 import React from 'react';
-import LearnIstructions from '../LearnInstructions';
+import LearnInstructions from '../LearnInstructions';
 
 const LearnInstructionsWrapper = () => {
   return (
     <div>
-      <LearnIstructions />
+      <LearnInstructions />
     </div>
   );
 };
