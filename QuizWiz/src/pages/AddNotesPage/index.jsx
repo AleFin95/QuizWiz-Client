@@ -29,7 +29,26 @@ function AddNotesPage() {
     }
 
     return () => clearInterval(timer);
-  }, [initialMinutes, isRunning, remainingSeconds, setRemainingSeconds]);
+  }, [isRunning, remainingSeconds]);
+
+  const startTimer = () => {
+    setRemainingSeconds(initialMinutes * 60);
+    setIsRunning(true);
+  };
+
+  const stopTimer = () => {
+    setIsRunning(false);
+  };
+
+  const resetTimer = () => {
+    setIsRunning(false);
+    setRemainingSeconds(0);
+  };
+
+  const handleMinutesChange = (event) => {
+    const minutes = parseInt(event.target.value, 10);
+    setInitialMinutes(isNaN(minutes) ? 0 : minutes);
+  };
 
   return (
     <>
