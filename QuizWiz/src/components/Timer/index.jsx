@@ -63,7 +63,7 @@ const Timer = ({flag_page}) => {
   }
 
   return (
-    <div>
+    <div className='timer'>
      
 
 
@@ -76,7 +76,7 @@ const Timer = ({flag_page}) => {
       ) : (
 
         <>
-        <h1>Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h1>
+        {/* <h1>Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h1> */}
             <label>
                 Set Minutes:
                 <input type="number" min={0} value={initialMinutes} onChange={handleMinutesChange} />
