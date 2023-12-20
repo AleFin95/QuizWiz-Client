@@ -9,3 +9,4 @@ export { default as SignUpComponent } from './SignUpComponent';
 export { default as TopicLabel } from './TopicLabel';
 export { default as TopicsFilter } from './TopicsFilter';
 export {default as Timer} from "./Timer"
+export {default as DeleteButton} from "./DeleteButton"
