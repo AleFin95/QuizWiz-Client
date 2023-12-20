@@ -24,6 +24,7 @@ const TimerPage = () => {
           Set Minutes:
           <input
             type='number'
+            min={0}
             value={initialMinutes}
             onChange={handleMinutesChange}
           />
