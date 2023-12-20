@@ -1,0 +1,12 @@
+
+.tableRow {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+
+.rankColumn {
+    width: 50px;
+  }
+  
