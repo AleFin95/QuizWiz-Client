@@ -17,6 +17,7 @@ body {
   position: relative;
   color: rgb(87, 91, 120);
   overflow: auto;
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -103,9 +104,9 @@ body::-webkit-scrollbar {
   color: rgb(255, 255, 255);
   font-weight: bold;
   margin: 0;
-  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
+  /* text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
     10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
-    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
+    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2; */
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -274,7 +275,7 @@ nav a.active {
   justify-content: center;
   color: #ffffff;
 }
-
+/*Timer page: /learn*/
 .timer {
   background: url('/TimerPage.png') center/cover no-repeat;
   min-height: 100vh;
@@ -283,9 +284,95 @@ nav a.active {
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  gap:30px;
 }
 
 
+.timer h1 {
+
+
+  /* font-family: Anton;
+  font-size: 7em;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin: 0;
+  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
+    10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
+    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
+  -webkit-background-clip: text; 
+  background-clip: text; */
+
+  font-family: Anton;
+  font-size: 7em;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin: 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+}
+
+.timer label {
+  display: block;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  /* color: #ffffff; */
+  color: #3b5165;
+  font-family: Anton;
+}
+
+.timer input {
+  
+  display: block;
+  width:300px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.timer button {
+  width: 150px;
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Poppins';
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.timer button:hover {
+  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.timer button:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.timer-image {
+  width: 500px; 
+  /* height: 100px;  */
+  margin-bottom: 20px; 
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+
+.timer h2 {
+  font-size: 70px;
+   font-family: Anton;
+}
 .topics {
   background: url('/TopicsPage.png') center/cover no-repeat;
   min-height: 100vh;
@@ -295,6 +382,40 @@ nav a.active {
   justify-content: center;
   color: #ffffff;
 }
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Change to your desired color */
+}
+
+.search-bar input{
+  border-radius: 20px;
+  border-style: none;
+}
+
+.search-bar input:active{
+  border-radius: 20px;
+  border-style: none;
+}
+
+.displaytopics {
+  margin-top: 20px;
+  height: 200px;
+  width: 500px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 25px 35px;
+  overflow: auto;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+  background: linear-gradient(to bottom, rgb(119, 119, 119) 0%, rgba(0,0,0,0) 100%);
+}
+.displaytopics::-webkit-scrollbar {
+  display: none;
+}
+
 
 .results {
   background: url('/ResultsPage.png') center/cover no-repeat;
@@ -315,6 +436,8 @@ nav a.active {
   justify-content: center;
   color: #ffffff;
 }
+
+
 /* Style Quiz Istruction page */
 .quiz-instructions-wrapper {
   position: fixed;
@@ -339,10 +462,12 @@ nav a.active {
 .quiz-instructions-container {
   display: none;
   flex-direction: column;
-  background-color: rgb(224, 240, 245);
+  background-color: rgb(109, 155, 169);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  border-radius: 10px;
+  color: #fff;
 }
 
 .visible {
@@ -355,10 +480,9 @@ nav a.active {
 
 
 .footer {
- 
   color: rgba(144, 117, 154,00.5rem);
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   position: fixed;
   left: 0;
   bottom: 0;

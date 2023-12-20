@@ -6,7 +6,7 @@ const TimerPage = () => {
   
   return (
     <>
-    <Timer flag_page={"add_notes"} /> //Passing the flag depending on page we use 
+    <Timer flag_page={"add_notes"} /> 
     <LearnInstructionsWrapper/>
     </>
   );
