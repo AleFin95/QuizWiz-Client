@@ -3,7 +3,7 @@ import './style.css'
 
 import { ScoreTable } from '../../components'
 
-function Leaderboard() {
+function Progress() {
   const [scores, setScores]=useState([])
   
   useEffect(() => {
@@ -30,7 +30,7 @@ function Leaderboard() {
 
   return (
     <>
-        <h2>Leaderboard</h2>
+        <h2>My Progress</h2>
         <div className="leaderboardContainer">
           <table className="leaderboardTable">
             <thead>
@@ -49,4 +49,4 @@ function Leaderboard() {
   )
 }
 
-export default Leaderboard
+export default Progress

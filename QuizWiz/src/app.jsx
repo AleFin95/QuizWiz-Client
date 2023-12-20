@@ -50,7 +50,7 @@ function App() {
             </>
           }
         />
-        <Route path='/leaderboard' element={<Pages.Leaderboard/>} />
+        <Route path='/progress' element={<Pages.Progress/>} />
         <Route path='*' element={<Pages.NotFoundPage />} />
       </Routes>
     </AuthProvider>
