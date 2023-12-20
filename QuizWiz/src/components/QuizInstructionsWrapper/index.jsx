@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
-import { QuizInstructions } from '../index';
+import React from 'react';
+import QuizInstructions from "../QuizInstructions";
 
 const QuizInstructionsWrapper = () => {
-  const [showInstructions, setShowInstructions] = useState(false);
-
-  const toggleInstructions = () => {
-    setShowInstructions(!showInstructions);
-  };
-
   return (
     <div>
-      {showInstructions && <QuizInstructions onClose={toggleInstructions} />}
-      <button onClick={toggleInstructions}>Open Instructions</button>
+      <QuizInstructions />
     </div>
   );
 };

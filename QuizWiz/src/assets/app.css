@@ -341,3 +341,29 @@ nav a.active {
   justify-content: center;
   color: #ffffff;
 }
+/* Style Quiz Istruction page */
+.quiz-instructions-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.quiz-icon-container {
+  margin-right: 10px; 
+}
+
+.quiz-icon {
+  cursor: pointer;
+}
+
+.quiz-instructions-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
