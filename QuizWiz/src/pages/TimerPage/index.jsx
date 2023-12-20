@@ -50,7 +50,7 @@ const TimerPage = () => {
   }
 
   return (
-    <div>
+    <div className='timer'>
       <h1>Countdown Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h1>
       <label>
         Set Minutes:

@@ -57,7 +57,7 @@ function AddNotesPage() {
       };
 
     return (
-        <div>
+        <div className='addNotes'>
   
             <h1>Add Note</h1>
            
