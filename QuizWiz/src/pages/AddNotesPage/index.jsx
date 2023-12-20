@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { LearnInstructionsWrapper } from '../../components';
+import NoteForm from '../../components/NoteForm';
+import { useAuth } from '../../contexts';
 
 function AddNotesPage() {
   const { state } = useLocation();
 
-  const [initialMinutes, setInitialMinutes] = useState(
-    state === null ? 10 : state.minutes
-  );
+  const [initialMinutes] = useState(state === null ? 10 : state.minutes);
   const { remainingSeconds, setRemainingSeconds } = useAuth();
   const [isRunning, setIsRunning] = useState(false);
 
@@ -29,38 +29,23 @@ function AddNotesPage() {
     }
 
     return () => clearInterval(timer);
-  }, [isRunning, remainingSeconds]);
+  }, [initialMinutes, isRunning, remainingSeconds, setRemainingSeconds]);
 
-  const startTimer = () => {
-    setRemainingSeconds(initialMinutes * 60);
-    setIsRunning(true);
-  };
+  return (
+    <>
+      <div>
+        <h1>Add Note</h1>
 
-  const stopTimer = () => {
-    setIsRunning(false);
-  };
+        <p>
+          Countdown Timer: {Math.floor(remainingSeconds / 60)}:
+          {remainingSeconds % 60}
+        </p>
 
-  const resetTimer = () => {
-    setIsRunning(false);
-    setRemainingSeconds(0);
-  };
-
-  const handleMinutesChange = (event) => {
-    const minutes = parseInt(event.target.value, 10);
-    setInitialMinutes(isNaN(minutes) ? 0 : minutes);
-  };
-
-    return (
-        <div className='addNotes'>
-            <h1>Add Note</h1>
-           
-             <p>Countdown Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</p> 
-            
-            <NoteForm />
-
-        <LearnInstructionsWrapper />
+        <NoteForm />
       </div>
-    )
+      <LearnInstructionsWrapper />
+    </>
+  );
 }
 
 export default AddNotesPage;

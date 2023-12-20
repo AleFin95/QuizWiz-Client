@@ -1,5 +1,5 @@
 import React from 'react';
-import QuizInstructions from "../QuizInstructions";
+import QuizInstructions from '../QuizInstructions';
 
 const QuizInstructionsWrapper = () => {
   return (

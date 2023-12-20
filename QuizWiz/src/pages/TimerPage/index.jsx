@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {useAuth} from "../../contexts"
-import {useNavigate} from 'react-router-dom' 
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LearnInstructionsWrapper } from '../../components';
 
 const TimerPage = () => {
@@ -20,18 +19,18 @@ const TimerPage = () => {
 
   return (
     <>
-    <div className='timer'>
-      <label>
-        Set Minutes:
-        <input
-          type='number'
-          value={initialMinutes}
-          onChange={handleMinutesChange}
-        />
-      </label>
-      <button onClick={handleClick}>Start</button>
-    </div>
-    <LearnInstructionsWrapper />
+      <div className='timer'>
+        <label>
+          Set Minutes:
+          <input
+            type='number'
+            value={initialMinutes}
+            onChange={handleMinutesChange}
+          />
+        </label>
+        <button onClick={handleClick}>Start</button>
+      </div>
+      <LearnInstructionsWrapper />
     </>
   );
 };
