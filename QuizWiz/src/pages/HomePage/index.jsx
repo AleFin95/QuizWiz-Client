@@ -19,13 +19,15 @@ const HomePage = () => {
     <main>
       <h1>QuizWiz</h1>
 
-      <button className='navigation-button' onClick={handleLearnClick}>
-        Learn and Take Notes
-      </button>
+      <div className='button-container'>
+        <button className='navigation-button' onClick={handleLearnClick}>
+          Learn and Take Notes
+        </button>
 
-      <button className='navigation-button' onClick={handleQuizClick}>
-        Go to Quiz
-      </button>
+        <button className='navigation-button' onClick={handleQuizClick}>
+          Go to Quiz
+        </button>
+      </div>
     </main>
   );
 };
