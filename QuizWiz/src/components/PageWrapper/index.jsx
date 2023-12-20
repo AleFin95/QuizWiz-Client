@@ -18,12 +18,10 @@ const PageWrapper = () => {
       options
     );
 
-    if (response.status === 200) {
+    if (response.status == 200) {
       localStorage.removeItem('token');
       setToken('');
       navigateTo('/');
-    } else {
-      console.error('Logout failed:', response.status);
     }
   };
 
