@@ -10,27 +10,211 @@ body {
   font-family: "Poppins", sans-serif;
   text-align: center;
   font-weight: 300;
-  /* background-image: url(../assets/landing.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
   position: relative;
   color: rgb(87, 91, 120);
+  
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
+.loginPage{
+  background: url('/LandingPage.png') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login {
+  height: 220px;
+  width: 190px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 25px 35px;
+  overflow: auto;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.login::-webkit-scrollbar {
+  display: none;
+}
+
+
+.login * {
+  font-family: 'Poppins', sans-serif;
+  color: #3b5165;
+  outline: none;
+  border: none;
+  
+}
+
+.login h2 {
+  font-size: 20px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.login label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login input {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.login ::placeholder {
+  color: #ffffff;
+}
+
+.loginHeader {
+  z-index: 10; 
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #FFF;
+  margin: 0; 
+  -webkit-text-stroke: 0px #C0A3C2;
+  font: weight 600px;;
+  
+}
+
+.loginHeader h1 {
+  font-family: Anton;
+  font-size: 3em; 
+  color: rgb(255, 255, 255); 
+  font-weight: bold;
+  margin: 0; 
+  text-shadow:
+  -10px -10px 0 #C0A3C2,
+  0   -10px 0 #C0A3C2,
+  10px -10px 0 #C0A3C2,
+  10px  0   0 #C0A3C2,
+  10px  10px 0 #C0A3C2,
+  0    10px 0 #C0A3C2,
+ -10px  10px 0 #C0A3C2,
+ -10px  0   0 #C0A3C2;      
+  -webkit-background-clip: text; 
+  background-clip: text;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 13px;
+  font-weight: 300;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.login button {
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 13px;
+  font-weight: 300;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 
+main {
+  background-image: url('/HomePage.png'); /* Background image path */
+  background-size: cover; /* Cover the entire element with the background image */
+  background-repeat: no-repeat;
+  height: 100vh; /* Set the height to fill the viewport height */
+  display: flex; /* Create a flex container for centering content */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text */
+  color: white; /* Text color */
+  overflow: auto;
+}
+
+.login::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-family: Anton;
+  font-size: 10em; 
+  color: rgb(255, 255, 255); 
+  font-weight: bold;
+  margin: 0; 
+  text-shadow:
+  -10px -10px 0 #C0A3C2,
+   0   -10px 0 #C0A3C2,
+   10px -10px 0 #C0A3C2,
+   10px  0   0 #C0A3C2,
+   10px  10px 0 #C0A3C2,
+   0    10px 0 #C0A3C2,
+  -10px  10px 0 #C0A3C2,
+  -10px  0   0 #C0A3C2;    
+  -webkit-background-clip: text; 
+  background-clip: text;
+}
+
+ul {
+  list-style: none; /* Remove list bullets */
+  padding: 0; /* Remove list padding */
+}
+
+/* Style list items (links) */
+li {
+  margin-bottom: 0.5rem; /* Add spacing between list items */
+}
+
+/* Style links */
+a {
+  color: rgb(177, 244, 177); /* Link text color */
+  text-decoration:none;
+  font-weight: bold; /* Make links bold */
+  font-size: 1.2rem; 
+}
+
+/* app.css */
+
+/* Style the navigation bar (nav) */
+nav {
+  background-color: #333; /* Background color of the navigation bar */
+  padding: 1rem; /* Add padding to create spacing around the links */
+}
+
+/* Style the navigation links (NavLinks) */
+nav a {
+  color: white; /* Text color for links */
+  text-decoration: none; /* Remove underline from links */
+  margin-right: 1rem; /* Add spacing between links */
+  font-weight: bold; /* Make links bold */
+  font-size: 1.2rem; /* Adjust font size as needed */
+}
+
+/* Hover effect for links */
+nav a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Style the active link */
+nav a.active {
+  background-color: #555; /* Background color for the active link */
+  border-radius: 4px; /* Add rounded corners for the active link */
+  padding: 0.5rem 1rem; /* Add padding to highlight the active link */
+}
