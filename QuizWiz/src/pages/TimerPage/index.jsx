@@ -19,7 +19,7 @@ const TimerPage = () => {
 
   return (
     <>
-      <div>
+      <div className='timer'>
         <label>
           Set Minutes:
           <input
