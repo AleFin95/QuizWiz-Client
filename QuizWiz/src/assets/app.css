@@ -159,13 +159,13 @@ main {
 
 h1 {
   font-family: Anton;
-  font-size: 10em;
+  font-size: 7em;
   color: rgb(255, 255, 255);
   font-weight: bold;
   margin: 0;
-  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
+  /* text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
     10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
-    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
+    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2; */
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -192,7 +192,7 @@ nav {
 
 /* Style the navigation links (NavLinks) */
 nav a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   margin-right: 1rem;
   font-weight: bold;
@@ -200,57 +200,37 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 nav a.active {
-  background-color: #555;
+  background-color: #649dae;
   border-radius: 4px;
   padding: 0.5rem 1rem;
 }
 
-.page-wrapper {
-  position: relative;
-}
-
-.sticky-header {
-  background: none !important; /* Use !important to override other styles */
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.page-wrapper,
-.sticky-header,
-nav {
-  margin: 0;
-  padding: 0;
-}
-
+/* Existing button styles */
 .navigation-button {
   align-items: center;
   background-color: #fcfcfd;
   border-radius: 4px;
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+              rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
   color: #36395a;
   cursor: pointer;
   display: flex;
-  flex-direction: row; /* Stack content vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  text-align: center; /* Center text */
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
   font-family: 'JetBrains Mono', monospace;
   height: 48px;
-  justify-content: center;
   line-height: 1;
   list-style: none;
   padding-left: 16px;
   padding-right: 16px;
   position: relative;
-  text-align: left;
   text-decoration: none;
   transition: box-shadow 0.15s, transform 0.15s;
   user-select: none;
@@ -260,6 +240,16 @@ nav {
   will-change: box-shadow, transform;
   font-size: 18px;
 }
+
+/* New container styles */
+.navigation-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Align buttons horizontally in center */
+  align-items: center; /* Align buttons vertically in center */
+  gap: 10px; /* Optional: adds space between buttons */
+}
+
 
 .button-30:focus {
   box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,

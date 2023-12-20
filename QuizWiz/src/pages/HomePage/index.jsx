@@ -18,16 +18,19 @@ const HomePage = () => {
   return (
     <main>
       <h1>QuizWiz</h1>
-
-      <button className='navigation-button' onClick={handleLearnClick}>
-        Learn and Take Notes
-      </button>
-
-      <button className='navigation-button' onClick={handleQuizClick}>
-        Go to Quiz
-      </button>
+  
+      <div className="navigation-buttons-container">
+        <button className='navigation-button' onClick={handleLearnClick}>
+          Learn and Take Notes
+        </button>
+  
+        <button className='navigation-button' onClick={handleQuizClick}>
+          Go to Quiz
+        </button>
+      </div>
     </main>
   );
+  
 };
 
 export default HomePage;
