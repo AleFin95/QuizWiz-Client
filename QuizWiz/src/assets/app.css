@@ -218,3 +218,30 @@ nav a.active {
   border-radius: 4px; /* Add rounded corners for the active link */
   padding: 0.5rem 1rem; /* Add padding to highlight the active link */
 }
+
+/* Style Quiz Istruction page */
+.quiz-instructions-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.quiz-icon-container {
+  margin-right: 10px; 
+}
+
+.quiz-icon {
+  cursor: pointer;
+}
+
+.quiz-instructions-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}

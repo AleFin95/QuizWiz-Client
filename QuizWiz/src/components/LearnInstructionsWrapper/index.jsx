@@ -1,8 +1,9 @@
 import React from 'react'
+import LearnIstructions from "../LearnInstructions"
 
 const LearnInstructionsWrapper = () => {
   return (
-    <div>LearnInstructionsWrapper</div>
+    <div><LearnIstructions/></div>
   )
 }
 
