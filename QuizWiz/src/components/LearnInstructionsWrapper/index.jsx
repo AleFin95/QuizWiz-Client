@@ -1,10 +1,12 @@
-import React from 'react'
-import LearnIstructions from "../LearnInstructions"
+import React from 'react';
+import LearnInstructions from '../LearnInstructions';
 
 const LearnInstructionsWrapper = () => {
   return (
-    <div><LearnIstructions/></div>
-  )
-}
+    <div>
+      <LearnInstructions />
+    </div>
+  );
+};
 
 export default LearnInstructionsWrapper;
