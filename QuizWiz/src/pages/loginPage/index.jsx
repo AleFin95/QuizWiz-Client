@@ -1,76 +1,93 @@
-import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
-import {SignUpComponent} from "../../components"
-import {useAuth} from "../../contexts"
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../assets/app.css';
-
-
+import { SignUpComponent } from '../../components';
+import { useAuth } from '../../contexts';
 
 const Login = () => {
-    const [inputValue, setInputValue] = useState ("")
-    const [password, setPassword] = useState("");
-    const [showSignUp, setShowSignUp] = useState(false);
-    const navigateTo = useNavigate()
-    const { setToken } = useAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogIn, setShowLogIn] = useState(true);
+  const navigateTo = useNavigate();
+  const { setToken } = useAuth();
 
-    function handleInput(e) {
-        setInputValue(e.target.value);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password
+        })
+      };
+
+      const response = await fetch(
+        'https://quizwiz-api.onrender.com/users/login',
+        options
+      );
+
+      if (response.status === 200) {
+        const { token } = await response.json();
+        localStorage.setItem('token', token);
+        setToken(token);
+        navigateTo('/');
+      } else {
+        console.error('Login failed');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
     }
+  };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const options = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    email: inputValue, 
-                    password: password,
-                }),
-            };
-      
-            const response = await fetch("https://quizwiz-api.onrender.com/users/login", options);
-      
-            if (response.status === 200) {
-                const { token } = await response.json();
-                localStorage.setItem('token', token)
-                setToken(token)
-                navigateTo('/');
-            } else {
-                console.error("Login failed");
-            }
-        } catch (error) {
-            console.error("Login error:", error);
-        }
-    };
+  function handleSignUpClick() {
+    setShowLogIn(!showLogIn);
+    setShowSignUp(!showSignUp);
+  }
 
-    function handleSignUpClick() {
-        setShowSignUp(!showSignUp)
-    }
-
-    return (
-        <div className="loginPage"> {}
-        <div className="loginHeader">
+  return (
+    <div className='loginPage'>
+      <div className='loginHeader'>
         <h1>QuizWiz</h1>
+      </div>
+      {showLogIn && (
+        <>
+          <div className='login'>
+            <h2>Log In</h2>
+            <form className='loginForm' onSubmit={handleSubmit}>
+              <input
+                type='text'
+                required
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder='email'
+                autoComplete='off'
+              />
+              <input
+                type='password'
+                required
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder='password'
+                autoComplete='off'
+              ></input>
+              <input type='submit' value='Log in' className='login-button' />
+              <p>
+                No account?
+                <button type='button' onClick={handleSignUpClick}>
+                  Sign up
+                </button>
+              </p>
+            </form>
+          </div>
+        </>
+      )}
+      {showSignUp && <SignUpComponent handleSignUpClick={handleSignUpClick} />}
     </div>
-        <div className="login">
-  <h2>Log In</h2>
-  <form onSubmit={handleSubmit}>
-    <input type="text" onChange={handleInput} value={inputValue} placeholder='email' autoComplete="off"/>
-    <br/>
-    <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="password" autoComplete="off"></input>
-    <br/>
-    <input type="submit" value="Log in" className="login-button" />
-    <p>No account? <button type='button' onClick={handleSignUpClick}>Sign up</button></p>
-  </form>
-  
-  {showSignUp && <SignUpComponent />}
-</div>
-
-        </div>
-    )
-}
+  );
+};
 
 export default Login;

@@ -1,52 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600&display=swap');
 
-
-body, h1, h2, p {
+body,
+h1,
+h2,
+p {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   font-weight: 300;
   position: relative;
   color: rgb(87, 91, 120);
-  
+  overflow: auto;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
-header {
-  background-color: rgba(237, 200, 200, 0);
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.loginPage{
+/* loginPage CSS*/
+.loginPage {
   background: url('/LandingPage.png') no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   display: flex;
   justify-content: center;
-  display: flex;
-  flex-direction: column; /* Stack flex items vertically */
+  flex-direction: column;
   align-items: center;
 }
 
 .login {
-  height: 220px;
-  width: 190px;
+  height: 235px;
+  width: 195px;
   background-color: rgba(255, 255, 255, 0.13);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -62,13 +51,11 @@ header {
   display: none;
 }
 
-
 .login * {
   font-family: 'Poppins', sans-serif;
   color: #3b5165;
   outline: none;
   border: none;
-  
 }
 
 .login h2 {
@@ -98,30 +85,33 @@ header {
 }
 
 .loginHeader {
-  z-index: 10; 
+  z-index: 10;
   text-align: center;
   margin-bottom: 20px;
   font-size: 2em;
-  color: #FFF;
-  margin: 0; 
-  -webkit-text-stroke: 0px #C0A3C2;
-  font: weight 600px;;
-  
+  color: #fff;
+  margin: 0;
+  -webkit-text-stroke: 0px #c0a3c2;
+  font: weight 600px;
 }
 
 .loginHeader h1 {
   font-family: Anton;
-  font-size: 3em; 
-  color: rgb(255, 255, 255); 
+  font-size: 3em;
+  color: rgb(255, 255, 255);
   font-weight: bold;
-  margin: 0; 
-  text-shadow:
-    -4px -4px 0 #C0A3C2,   
-    4px -4px 0 #C0A3C2,    
-    -4px 4px 0 #C0A3C2,    
-    4px 4px 0 #C0A3C2;     
-  -webkit-background-clip: text; 
+  margin: 0;
+  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
+    10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
+    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
+  -webkit-background-clip: text;
   background-clip: text;
+}
+
+.loginForm {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
 }
 
 .login-button {
@@ -132,6 +122,7 @@ header {
   font-weight: 300;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -145,4 +136,231 @@ header {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+/* HomePage CSS*/
+main {
+  background-image: url('/HomePage.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: auto;
+}
+
+.login::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-family: Anton;
+  font-size: 10em;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin: 0;
+  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
+    10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
+    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Nav-bar css*/
+
+a {
+  color: rgb(144, 117, 154);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: absolute;
+  width: 100%; 
+  top: 0; 
+  left: 0; 
+}
+
+
+/* Style the navigation links (NavLinks) */
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  background-color: #555;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+.page-wrapper {
+  position: relative;
+}
+
+.sticky-header {
+  background: none !important; /* Use !important to override other styles */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.page-wrapper,
+.sticky-header,
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-button {
+  align-items: center;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row; /* Stack content vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text */
+  font-family: 'JetBrains Mono', monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/* AddNotesPage.css */
+
+.addNotes {
+  background: url('/AddNotePage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.myNotesPage {
+  background: url('/MyNotesPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.timer {
+  background: url('/TimerPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.topics {
+  background: url('/TopicsPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.results {
+  background: url('/ResultsPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.quiz {
+  background: url('/QuizPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+/* Style Quiz Istruction page */
+.quiz-instructions-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.quiz-icon-container {
+  margin-right: 10px;
+}
+
+.quiz-icon {
+  cursor: pointer;
+}
+
+.quiz-instructions-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
 }
