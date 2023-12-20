@@ -20,6 +20,7 @@ const TimerPage = () => {
   return (
     <>
       <div className='timer'>
+      <LearnInstructionsWrapper />
         <label>
           Set Minutes:
           <input
@@ -31,7 +32,7 @@ const TimerPage = () => {
         </label>
         <button onClick={handleClick}>Start</button>
       </div>
-      <LearnInstructionsWrapper />
+     
     </>
   );
 };
