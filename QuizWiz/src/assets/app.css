@@ -180,11 +180,15 @@ a {
 }
 
 nav {
-  background: transparent;
-  margin: 0;
-  padding: 0;
-  border: none;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: absolute;
+  width: 100%; 
+  top: 0; 
+  left: 0; 
 }
+
 
 /* Style the navigation links (NavLinks) */
 nav a {
