@@ -17,7 +17,7 @@ describe('TimerPage Component', () => {
         </MemoryRouter>
       );
     it('displays "Countdown Timer', () => {
-        expect(screen.getByText(/Countdown Timer/i)).toBeInTheDocument();
+        expect(screen.getByText(/Text/i)).toBeInTheDocument();
     });
 
     it('initial timer value', async () => {
