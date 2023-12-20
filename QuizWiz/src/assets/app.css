@@ -27,9 +27,9 @@ body {
   align-items: center;
 }
 
-.login {
-  height: 220px;
-  width: 190px;
+.login{
+  height: 235px;
+  width: 195px;
   background-color: rgba(255, 255, 255, 0.13);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -136,16 +136,16 @@ body {
 
 
 main {
-  background-image: url('/HomePage.png'); /* Background image path */
-  background-size: cover; /* Cover the entire element with the background image */
+  background-image: url('/HomePage.png'); 
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh; /* Set the height to fill the viewport height */
-  display: flex; /* Create a flex container for centering content */
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  text-align: center; /* Center text */
-  color: white; /* Text color */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+  color: white;
   overflow: auto;
 }
 
@@ -172,49 +172,107 @@ h1 {
   background-clip: text;
 }
 
-ul {
-  list-style: none; /* Remove list bullets */
-  padding: 0; /* Remove list padding */
-}
-
-/* Style list items (links) */
-li {
-  margin-bottom: 0.5rem; /* Add spacing between list items */
-}
 
 /* Style links */
 a {
-  color: rgb(177, 244, 177); /* Link text color */
+  color: rgb(144, 117, 154); /* Link text color */
   text-decoration:none;
   font-weight: bold; /* Make links bold */
   font-size: 1.2rem; 
 }
 
-/* app.css */
-
-/* Style the navigation bar (nav) */
 nav {
-  background-color: #333; /* Background color of the navigation bar */
-  padding: 1rem; /* Add padding to create spacing around the links */
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
+
+
 
 /* Style the navigation links (NavLinks) */
 nav a {
-  color: white; /* Text color for links */
-  text-decoration: none; /* Remove underline from links */
-  margin-right: 1rem; /* Add spacing between links */
-  font-weight: bold; /* Make links bold */
-  font-size: 1.2rem; /* Adjust font size as needed */
+  color: rgb(0, 0, 0); 
+  text-decoration: none; 
+  margin-right: 1rem; 
+  font-weight: bold; 
+  font-size: 1.2rem; 
 }
 
-/* Hover effect for links */
+
 nav a:hover {
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline;
 }
 
-/* Style the active link */
 nav a.active {
-  background-color: #555; /* Background color for the active link */
-  border-radius: 4px; /* Add rounded corners for the active link */
-  padding: 0.5rem 1rem; /* Add padding to highlight the active link */
+  background-color: #555;
+  border-radius: 4px; 
+  padding: 0.5rem 1rem; 
+}
+
+.page-wrapper {
+  position: relative;
+}
+
+.sticky-header {
+  background: none !important; /* Use !important to override other styles */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.page-wrapper, .sticky-header, nav {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* CSS */
+.navigation-button {
+  align-items: center;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row; /* Stack content vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text */
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
 }
