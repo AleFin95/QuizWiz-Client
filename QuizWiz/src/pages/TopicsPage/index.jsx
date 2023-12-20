@@ -63,9 +63,7 @@ const TopicsPage = () => {
 
   const startQuiz = () => {
     localStorage.setItem('selectedTopic', JSON.stringify(selectedTopic));
-    // Use selectedTopics to start the quiz
     console.log('Selected Topic:', selectedTopic);
-    // Redirect to the quiz page or perform any other action
     navigateTo('/test/quiz');
   };
 
@@ -80,7 +78,7 @@ const TopicsPage = () => {
         />
         <div>{displayTopics()}</div>
         <p>
-          <button type='button' onClick={startQuiz}>
+          <button type='button' button className='navigation-button' onClick={startQuiz}>
             Start Quiz
           </button>
         </p>
