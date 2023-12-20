@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NoteForm from "../../components/NoteForm"
 import {useAuth} from "../../contexts"
 import { useLocation } from 'react-router-dom';
+import { LearnInstructionsWrapper } from '../../components';
 
 function AddNotesPage() {
     
@@ -57,14 +58,16 @@ function AddNotesPage() {
       };
 
     return (
+      <>
         <div>
-  
             <h1>Add Note</h1>
            
              <p>Countdown Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</p> 
             
             <NoteForm />
         </div>
+        <LearnInstructionsWrapper />
+      </>
     )
 }
 

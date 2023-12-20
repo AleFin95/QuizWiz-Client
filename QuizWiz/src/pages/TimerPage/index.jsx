@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useAuth} from "../../contexts"
 import {useNavigate} from 'react-router-dom' 
+import { LearnInstructionsWrapper } from '../../components';
 
 const TimerPage = () => {
   const [initialMinutes, setInitialMinutes] = useState(0);
@@ -50,6 +51,7 @@ const TimerPage = () => {
   }
 
   return (
+    <>
     <div>
       <h1>Countdown Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h1>
       <label>
@@ -60,6 +62,8 @@ const TimerPage = () => {
       <button onClick={stopTimer}>Stop</button>
       <button onClick={resetTimer}>Reset</button>
     </div>
+    <LearnInstructionsWrapper />
+    </>
   );
 };
 
