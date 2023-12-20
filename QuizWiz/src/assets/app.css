@@ -17,6 +17,7 @@ body {
   position: relative;
   color: rgb(87, 91, 120);
   overflow: auto;
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -296,6 +297,41 @@ nav a.active {
   color: #ffffff;
 }
 
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Change to your desired color */
+}
+
+.search-bar{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.displaytopics {
+  margin-top: 20px;
+  height: 200px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 25px 35px;
+  overflow: auto;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+  background: linear-gradient(to bottom, rgb(119, 119, 119) 0%, rgba(0,0,0,0) 100%);
+}
+.displaytopics::-webkit-scrollbar {
+  display: none;
+}
+
+.topic-label-container:active {
+ color: aqua;
+}
+
+
 .results {
   background: url('/ResultsPage.png') center/cover no-repeat;
   min-height: 100vh;
@@ -315,6 +351,8 @@ nav a.active {
   justify-content: center;
   color: #ffffff;
 }
+
+
 /* Style Quiz Istruction page */
 .quiz-instructions-wrapper {
   position: fixed;
@@ -339,10 +377,12 @@ nav a.active {
 .quiz-instructions-container {
   display: none;
   flex-direction: column;
-  background-color: rgb(224, 240, 245);
+  background-color: rgb(109, 155, 169);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  border-radius: 10px;
+  color: #fff;
 }
 
 .visible {
@@ -355,10 +395,9 @@ nav a.active {
 
 
 .footer {
- 
   color: rgba(144, 117, 154,00.5rem);
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   position: fixed;
   left: 0;
   bottom: 0;
