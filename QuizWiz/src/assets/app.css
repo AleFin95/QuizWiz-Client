@@ -12,9 +12,16 @@ body {
   font-weight: 300;
   position: relative;
   color: rgb(87, 91, 120);
-  
+  overflow: auto;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
+
+
+
+/* loginPage CSS*/
 .loginPage{
   background: url('/LandingPage.png') no-repeat center center fixed;
   background-size: cover;
@@ -134,7 +141,7 @@ body {
   margin-bottom: 20px;
 }
 
-
+/* HomePage CSS*/
 main {
   background-image: url('/HomePage.png'); 
   background-size: cover;
@@ -172,12 +179,12 @@ h1 {
   background-clip: text;
 }
 
+/* Nav-bar css*/
 
-/* Style links */
 a {
-  color: rgb(144, 117, 154); /* Link text color */
+  color: rgb(144, 117, 154); 
   text-decoration:none;
-  font-weight: bold; /* Make links bold */
+  font-weight: bold; 
   font-size: 1.2rem; 
 }
 
@@ -187,8 +194,6 @@ nav {
   padding: 0;
   border: none;
 }
-
-
 
 /* Style the navigation links (NavLinks) */
 nav a {
@@ -227,9 +232,6 @@ nav a.active {
 }
 
 
-
-
-/* CSS */
 .navigation-button {
   align-items: center;
   background-color: #FCFCFD;
@@ -275,4 +277,68 @@ nav a.active {
 .button-30:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+
+/* AddNotesPage.css */
+
+.addNotes {
+  background: url('/AddNotePage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.myNotesPage {
+  background: url('/MyNotesPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.timer {
+  background: url('/TimerPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.topics{
+  background: url('/TopicsPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.results {
+  background: url('/ResultsPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+
+.quiz {
+  background: url('/QuizPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
 }

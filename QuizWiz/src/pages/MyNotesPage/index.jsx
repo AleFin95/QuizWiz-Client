@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+
 
 const MyNotesPage = () => {
   return (
-    <h1>MyNotesPage</h1>
-  )
+    <div className="myNotesPage"> {/* Apply the "container" class */}
+      <h1>myNotesPage</h1>
+    </div>
+  );
 }
 
-export default MyNotesPage
+export default MyNotesPage;
