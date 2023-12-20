@@ -46,7 +46,7 @@ const QuizModePage = () => {
   };
 
   return (
-    <>
+    <div className='quiz'>
       <h1>QuizModePage</h1>
       {questions.length > 0 && currentQuestionIndex < questions.length && (
         <div>
@@ -77,7 +77,7 @@ const QuizModePage = () => {
         </p>
       )}
       <QuizInstructionsWrapper />
-    </>
+    </div>
   );
 };
 
