@@ -6,30 +6,29 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleLearnClick = () => {
-    // Navigate to the "/learn" route
     navigate('/learn');
   };
 
   const handleQuizClick = () => {
-    // Navigate to the "/test" route
     navigate('/test');
   };
 
   return (
     <main>
       <h1>QuizWiz</h1>
-
-      <div className='button-container'>
+  
+      <div className="navigation-buttons-container">
         <button className='navigation-button' onClick={handleLearnClick}>
           Learn and Take Notes
         </button>
-
+  
         <button className='navigation-button' onClick={handleQuizClick}>
           Go to Quiz
         </button>
       </div>
     </main>
   );
+  
 };
 
 export default HomePage;
