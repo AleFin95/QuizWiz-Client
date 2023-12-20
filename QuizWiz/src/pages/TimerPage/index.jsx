@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LearnInstructionsWrapper } from '../../components';
 
 const TimerPage = () => {
   const [initialMinutes, setInitialMinutes] = useState(0);
@@ -17,17 +18,20 @@ const TimerPage = () => {
   };
 
   return (
-    <div>
-      <label>
-        Set Minutes:
-        <input
-          type='number'
-          value={initialMinutes}
-          onChange={handleMinutesChange}
-        />
-      </label>
-      <button onClick={handleClick}>Start</button>
-    </div>
+    <>
+      <div>
+        <label>
+          Set Minutes:
+          <input
+            type='number'
+            value={initialMinutes}
+            onChange={handleMinutesChange}
+          />
+        </label>
+        <button onClick={handleClick}>Start</button>
+      </div>
+      <LearnInstructionsWrapper />
+    </>
   );
 };
 
