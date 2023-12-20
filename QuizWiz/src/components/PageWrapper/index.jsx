@@ -17,7 +17,6 @@ const PageWrapper = () => {
       'https://quizwiz-api.onrender.com/users/logout',
       options
     );
-    const data = await response.json();
 
     if (response.status == 200) {
       localStorage.removeItem('token');

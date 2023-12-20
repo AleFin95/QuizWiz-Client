@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AnswersBox, QuizInstructionsWrapper } from '../../components';
+import { AnswersBox,QuizInstructionsWrapper,Timer } from '../../components';
+
+
 
 const QuizModePage = () => {
   const [questions, setQuestions] = useState([]);
@@ -46,38 +48,41 @@ const QuizModePage = () => {
   };
 
   return (
-    <div className='quiz'>
-      <h1>QuizModePage</h1>
-      {questions.length > 0 && currentQuestionIndex < questions.length && (
-        <div>
-          <div key={questions[currentQuestionIndex]._id}>
-            <p>{questions[currentQuestionIndex].name}</p>
-          </div>
+    <>
+      <div className='quiz'>
+        <h1>QuizModePage</h1>
+        <Timer flag_page={"quiz"} /> 
+        {questions.length > 0 && currentQuestionIndex < questions.length && (
           <div>
-            <AnswersBox />
+            <div key={questions[currentQuestionIndex]._id}>
+              <p>{questions[currentQuestionIndex].name}</p>
+            </div>
+            <div>
+              <AnswersBox />
+            </div>
+            <button
+              onClick={handlePrevQuestion}
+              disabled={currentQuestionIndex === 0}
+            >
+              &lt; Prev Question
+            </button>
+            <button
+              onClick={handleNextQuestion}
+              disabled={currentQuestionIndex === questions.length - 1}
+            >
+              Next Question &gt;
+            </button>
           </div>
-          <button
-            onClick={handlePrevQuestion}
-            disabled={currentQuestionIndex === 0}
-          >
-            &lt; Prev Question
-          </button>
-          <button
-            onClick={handleNextQuestion}
-            disabled={currentQuestionIndex === questions.length - 1}
-          >
-            Next Question &gt;
-          </button>
-        </div>
-      )}
-      {currentQuestionIndex === questions.length && (
-        <p>
-          All questions answered!{' '}
-          <Link to='/test/quiz/results'>See Results</Link>
-        </p>
-      )}
+        )}
+        {currentQuestionIndex === questions.length && (
+          <p>
+            All questions answered!{' '}
+            <Link to='/test/quiz/results'>See Results</Link>
+          </p>
+        )}
+      </div>
       <QuizInstructionsWrapper />
-    </div>
+    </>
   );
 };
 

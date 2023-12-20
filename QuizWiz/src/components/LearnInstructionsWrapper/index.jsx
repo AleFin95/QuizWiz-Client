@@ -1,7 +1,12 @@
 import React from 'react';
+import LearnInstructions from '../LearnInstructions';
 
 const LearnInstructionsWrapper = () => {
-  return <div>LearnInstructionsWrapper</div>;
+  return (
+    <div>
+      <LearnInstructions />
+    </div>
+  );
 };
 
 export default LearnInstructionsWrapper;
