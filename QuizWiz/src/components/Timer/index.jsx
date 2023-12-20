@@ -12,24 +12,25 @@ const Timer = ({flag_page}) => {
   const navigate=useNavigate()
   useEffect(() => {
     let timer;
-
+    console.log("remainingSeconds=",remainingSeconds)
     if (isRunning && remainingSeconds > 0) {
       timer = setInterval(() => {
         setRemainingSeconds((prevSeconds) => prevSeconds - 1);
       }, 1000);
-    } else if (remainingSeconds === 0) {
+    } else if (isRunning && remainingSeconds === 0) {
+    if (flag_page === 'quiz') {navigate('/test/quiz-results');} 
       setIsRunning(false);
-    // if (flag_page === 'quiz') {navigate('/test/quiz-results');}
+    
       
     }
 
     return () => clearInterval(timer);
-  }, [isRunning, remainingSeconds]);
+  }, [isRunning, remainingSeconds,flag_page]);
 
   const startTimer = () => {
-    const initialTime = flag_page === 'quiz' ? 1 : initialMinutes;
+    const initialTime = flag_page === 'quiz' ? 25 : initialMinutes;
     setRemainingSeconds(initialTime * 60);
-    // setRemainingSeconds(initialMinutes * 60);
+   
     setIsRunning(true);
   };
 
@@ -63,13 +64,19 @@ const Timer = ({flag_page}) => {
 
   return (
     <div>
-      <h1>Countdown Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h1>
+     
+
+
 
       {flag_page === 'quiz' ? (
-        <button onClick={startTimer}>Start</button>
+        <>
+         <h2>Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h2>
+        </>
+
       ) : (
 
         <>
+        <h1>Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h1>
             <label>
                 Set Minutes:
                 <input type="number" value={initialMinutes} onChange={handleMinutesChange} />
@@ -82,7 +89,6 @@ const Timer = ({flag_page}) => {
         
       )}
       {/* <button onClick={handleClick} >Start</button> */}
-
     </div>
   );
 };
