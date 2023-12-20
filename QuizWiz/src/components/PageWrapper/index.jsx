@@ -7,8 +7,6 @@ const PageWrapper = () => {
     const {setToken, token} = useAuth()
     const navigateTo = useNavigate()
 
-
-
     const handleClick = async () => {
         const options = {
             headers: {
@@ -33,7 +31,6 @@ const PageWrapper = () => {
     
     return (
       <div className="page-wrapper">
-        <header className="sticky-header">
           <nav>
             <NavLink to="/">Home</NavLink>
             {token && <NavLink to="/mynotes">My Notes</NavLink>}
@@ -43,7 +40,6 @@ const PageWrapper = () => {
               </NavLink>
             )}
           </nav>
-        </header>
       </div>
     );
   };

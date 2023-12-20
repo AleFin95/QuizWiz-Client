@@ -188,10 +188,8 @@ a {
 }
 
 nav {
-  background: transparent;
-  margin: 0;
-  padding: 0;
-  border: none;
+  background: 'transparent';
+  position: 'absolute';
 }
 
 /* Style the navigation links (NavLinks) */
@@ -214,23 +212,8 @@ nav a.active {
   padding: 0.5rem 1rem; 
 }
 
-.page-wrapper {
-  position: relative;
-}
 
-.sticky-header {
-  background: none !important; /* Use !important to override other styles */
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.page-wrapper, .sticky-header, nav {
-  margin: 0;
-  padding: 0;
-}
-
-
+/* buttons on homepage */
 .navigation-button {
   align-items: center;
   background-color: #FCFCFD;
@@ -245,7 +228,7 @@ nav a.active {
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
   text-align: center; /* Center text */
-  font-family: "JetBrains Mono",monospace;
+  font-family: "JetBrains Mon",monospace;
   height: 48px;
   justify-content: center;
   line-height: 1;
