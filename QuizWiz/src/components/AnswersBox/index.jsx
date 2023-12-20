@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Answers = ({ questionId }) => {
   const [answers, setAnswers] = useState([]);
@@ -6,9 +6,11 @@ const Answers = ({ questionId }) => {
   useEffect(() => {
     async function fetchAnswers() {
       try {
-        const response = await fetch(`https://quizwiz-api.onrender.com/answers/${questionId}`);
+        const response = await fetch(
+          `https://quizwiz-api.onrender.com/answers/${questionId}`
+        );
         const data = await response.json();
-        console.log(data)
+        console.log(data);
         setAnswers(data);
       } catch (error) {
         console.error('Error fetching answers:', error);

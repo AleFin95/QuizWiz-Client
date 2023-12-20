@@ -1,70 +1,71 @@
-import React, { useState, useEffect } from 'react';
-import NoteForm from "../../components/NoteForm"
-import {useAuth} from "../../contexts"
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { LearnInstructionsWrapper } from '../../components';
 
 function AddNotesPage() {
-    
-    const {state}=useLocation()
-    
-    const [initialMinutes, setInitialMinutes] = useState(state === null ? 10 : state.minutes);
-    const { remainingSeconds, setRemainingSeconds } = useAuth()
-    const [isRunning, setIsRunning] = useState(false);
-    
+  const { state } = useLocation();
 
-    useEffect(() => {
-        let timer;
-        const startTimer = () => {
-            setRemainingSeconds(initialMinutes * 60);
-            setIsRunning(true);
-          };
+  const [initialMinutes, setInitialMinutes] = useState(
+    state === null ? 10 : state.minutes
+  );
+  const { remainingSeconds, setRemainingSeconds } = useAuth();
+  const [isRunning, setIsRunning] = useState(false);
 
-        if(!isRunning) {
-            startTimer()
-        }  
-        else if ( isRunning && remainingSeconds > 0){
-            timer = setInterval(() => {
-                setRemainingSeconds((prevSeconds) => prevSeconds - 1);
-              }, 1000);
+  useEffect(() => {
+    let timer;
+    const startTimer = () => {
+      setRemainingSeconds(initialMinutes * 60);
+      setIsRunning(true);
+    };
 
+    if (!isRunning) {
+      startTimer();
+    } else if (isRunning && remainingSeconds > 0) {
+      timer = setInterval(() => {
+        setRemainingSeconds((prevSeconds) => prevSeconds - 1);
+      }, 1000);
+    } else if (remainingSeconds === 0) {
+      setIsRunning(false);
+    }
 
-        }
-         else if (remainingSeconds === 0) {
-          setIsRunning(false);
-          
-        }
-    
-        return () => clearInterval(timer);
-      }, [isRunning, remainingSeconds]);
-    
-      const startTimer = () => {
-        setRemainingSeconds(initialMinutes * 60);
-        setIsRunning(true);
-      };
-    
-      const stopTimer = () => {
-        setIsRunning(false);
-      };
-    
-      const resetTimer = () => {
-        setIsRunning(false);
-        setRemainingSeconds(0);
-      };
+    return () => clearInterval(timer);
+  }, [isRunning, remainingSeconds]);
 
-      const handleMinutesChange = (event) => {
-        const minutes = parseInt(event.target.value, 10);
-        setInitialMinutes(isNaN(minutes) ? 0 : minutes);
-      };
+  const startTimer = () => {
+    setRemainingSeconds(initialMinutes * 60);
+    setIsRunning(true);
+  };
+
+  const stopTimer = () => {
+    setIsRunning(false);
+  };
+
+  const resetTimer = () => {
+    setIsRunning(false);
+    setRemainingSeconds(0);
+  };
+
+  const handleMinutesChange = (event) => {
+    const minutes = parseInt(event.target.value, 10);
+    setInitialMinutes(isNaN(minutes) ? 0 : minutes);
+  };
 
     return (
+<<<<<<< HEAD
         <div className='addNotes'>
   
+=======
+      <>
+        <div>
+>>>>>>> f2612153f246b287e6a34a769182fdc734d51b5b
             <h1>Add Note</h1>
            
              <p>Countdown Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</p> 
             
             <NoteForm />
         </div>
+        <LearnInstructionsWrapper />
+      </>
     )
 }
 
