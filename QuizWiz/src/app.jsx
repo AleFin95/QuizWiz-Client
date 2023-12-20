@@ -42,6 +42,8 @@ function App() {
           </Routes>
           </> 
         } />
+        <Route path='/leaderboard' element={<Pages.Leaderboard/>} />
+
 
         <Route path="*" element={<Pages.NotFoundPage />} />
       </Routes>
