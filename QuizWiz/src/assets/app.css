@@ -7,7 +7,9 @@ p {
   margin: 0;
   padding: 0;
 }
-
+.h2{
+  font-size: 30rem;
+}
 body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -159,13 +161,10 @@ main {
 
 h1 {
   font-family: Anton;
-  font-size: 10em;
+  font-size: 7em;
   color: rgb(255, 255, 255);
   font-weight: bold;
   margin: 0;
-  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
-    10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
-    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -173,7 +172,7 @@ h1 {
 /* Nav-bar css*/
 
 a {
-  color: rgb(144, 117, 154);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
@@ -181,98 +180,75 @@ a {
 
 nav {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  width: 100%; 
-  top: 0; 
-  left: 0; 
+  width: 100%;
+  top: 0;
+  left: 0;
 }
-
 
 /* Style the navigation links (NavLinks) */
 nav a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  margin-right: 1rem;
-  font-weight: bold;
-  font-size: 1.2rem;
+  min-width: 100px;
+  padding: 8px 20px;
+  margin: 20px;
+  background: rgb(233, 238, 238);
+  border: none;
+  border-radius: 20px;
+  color: rgb(158, 124, 163);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Poppins';
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 nav a:hover {
-  text-decoration: underline;
+  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+  inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 nav a.active {
-  background-color: #555;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
+  box-shadow: #6b6b77 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
-.page-wrapper {
-  position: relative;
-}
 
-.sticky-header {
-  background: none !important; /* Use !important to override other styles */
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
 
-.page-wrapper,
-.sticky-header,
-nav {
-  margin: 0;
-  padding: 0;
-}
-
+/* Existing button styles on*/
 .navigation-button {
-  align-items: center;
-  background-color: #fcfcfd;
-  border-radius: 4px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395a;
-  cursor: pointer;
+  min-width: 150px;
+  padding: 15px 30px;
+  margin: 20px;
+  background: rgb(233, 238, 238);
+  border: none;
+  border-radius: 25px;
+  color: rgb(125, 88, 131);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins';
+  letter-spacing: 1px;
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* layout for buttons */
+.navigation-buttons-container {
   display: flex;
-  flex-direction: row; /* Stack content vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  text-align: center; /* Center text */
-  font-family: 'JetBrains Mono', monospace;
-  height: 48px;
+  flex-direction: row;
   justify-content: center;
-  line-height: 1;
-  list-style: none;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow 0.15s, transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
-  font-size: 18px;
+  align-items: center;
+  gap: 10px; 
 }
 
-.button-30:focus {
-  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+.navigation-button:hover {
+  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.button-30:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.button-30:active {
+.navigation-button:active {
   box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
 }
@@ -308,6 +284,7 @@ nav {
   justify-content: center;
   color: #ffffff;
 }
+
 
 .topics {
   background: url('/TopicsPage.png') center/cover no-repeat;
@@ -345,12 +322,12 @@ nav {
   right: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; 
+  align-items: flex-end;
 }
 
 .quiz-icon-container {
-  margin-bottom: 10px; 
-  z-index: 1001; 
+  margin-bottom: 10px;
+  z-index: 1001;
   margin-top: 30px;
 }
 
@@ -376,3 +353,15 @@ nav {
   display: none;
 }
 
+
+.footer {
+ 
+  color: rgba(144, 117, 154,00.5rem);
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Poppins'
+}
