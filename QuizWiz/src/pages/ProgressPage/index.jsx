@@ -10,7 +10,7 @@ function Progress() {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:3000/scores/token/${token}`);
+        const response = await fetch(`https://quizwiz-api.onrender.com/scores/token/${token}`);
 
         if (response.status === 200) {
           const data = await response.json();
