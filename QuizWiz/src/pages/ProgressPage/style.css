@@ -4,6 +4,10 @@
   padding-top: 100px;
 }
 
+.score{
+    width: 74px;
+}
+
 .leaderboardContainer {
     max-width: 800px;
     margin: 0 auto;
