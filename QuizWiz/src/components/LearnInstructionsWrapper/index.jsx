@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const LearnInstructionsWrapper = () => {
-  return (
-    <div>LearnInstructionsWrapper</div>
-  )
-}
+  return <div>LearnInstructionsWrapper</div>;
+};
 
-export default LearnInstructionsWrapper
+export default LearnInstructionsWrapper;

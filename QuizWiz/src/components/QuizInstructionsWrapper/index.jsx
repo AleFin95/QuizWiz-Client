@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {QuizInstructions} from "../index";
+import { QuizInstructions } from '../index';
 
 const QuizInstructionsWrapper = () => {
   const [showInstructions, setShowInstructions] = useState(false);
