@@ -11,4 +11,3 @@ const QuizInstructions = ({ onClose }) => {
 };
 
 export default QuizInstructions;
-

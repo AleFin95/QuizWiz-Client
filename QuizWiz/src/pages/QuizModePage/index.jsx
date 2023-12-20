@@ -82,12 +82,3 @@ const QuizModePage = () => {
 };
 
 export default QuizModePage;
-
-
-
-
-
-
-
-
-
