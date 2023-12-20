@@ -1,3 +1,8 @@
+.ProgressPage {
+  background: url('/ResultsPage.png') center/cover no-repeat;
+  min-height: 100vh;
+  padding-top: 100px;
+}
 
 .leaderboardContainer {
     max-width: 800px;
