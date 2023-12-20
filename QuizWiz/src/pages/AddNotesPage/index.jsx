@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import NoteForm from '../../components/NoteForm';
-import { useAuth } from '../../contexts';
+import { LearnInstructionsWrapper } from '../../components';
 
 function AddNotesPage() {
   const { state } = useLocation();
@@ -51,18 +50,18 @@ function AddNotesPage() {
     setInitialMinutes(isNaN(minutes) ? 0 : minutes);
   };
 
-  return (
-    <div>
-      <h1>Add Note</h1>
-
-      <p>
-        Countdown Timer: {Math.floor(remainingSeconds / 60)}:
-        {remainingSeconds % 60}
-      </p>
-
-      <NoteForm />
-    </div>
-  );
+    return (
+      <>
+        <div>
+            <h1>Add Note</h1>
+           
+             <p>Countdown Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</p> 
+            
+            <NoteForm />
+        </div>
+        <LearnInstructionsWrapper />
+      </>
+    )
 }
 
 export default AddNotesPage;
