@@ -5,15 +5,12 @@ import { SignUpComponent } from '../../components';
 import { useAuth } from '../../contexts';
 
 const Login = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogIn, setShowLogIn] = useState(true);
   const navigateTo = useNavigate();
   const { setToken } = useAuth();
-
-  function handleInput(e) {
-    setInputValue(e.target.value);
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +21,7 @@ const Login = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email: inputValue,
+          email: email,
           password: password
         })
       };
@@ -48,45 +45,47 @@ const Login = () => {
   };
 
   function handleSignUpClick() {
+    setShowLogIn(!showLogIn);
     setShowSignUp(!showSignUp);
   }
 
   return (
     <div className='loginPage'>
-      {' '}
-      {}
       <div className='loginHeader'>
         <h1>QuizWiz</h1>
       </div>
-      <div className='login'>
-        <h2>Log In</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type='text'
-            onChange={handleInput}
-            value={inputValue}
-            placeholder='email'
-            autoComplete='off'
-          />
-          <br />
-          <input
-            type='password'
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder='password'
-            autoComplete='off'
-          ></input>
-          <br />
-          <input type='submit' value='Log in' className='login-button' />
-          <p>
-            No account?{' '}
-            <button type='button' onClick={handleSignUpClick}>
-              Sign up
-            </button>
-          </p>
-        </form>
-
-        {showSignUp && <SignUpComponent />}
-      </div>
+      {showLogIn && (
+        <>
+          <div className='login'>
+            <h2>Log In</h2>
+            <form className='loginForm' onSubmit={handleSubmit}>
+              <input
+                type='text'
+                required
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder='email'
+                autoComplete='off'
+              />
+              <input
+                type='password'
+                required
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder='password'
+                autoComplete='off'
+              ></input>
+              <input type='submit' value='Log in' className='login-button' />
+              <p>
+                No account?
+                <button type='button' onClick={handleSignUpClick}>
+                  Sign up
+                </button>
+              </p>
+            </form>
+          </div>
+        </>
+      )}
+      {showSignUp && <SignUpComponent handleSignUpClick={handleSignUpClick} />}
     </div>
   );
 };

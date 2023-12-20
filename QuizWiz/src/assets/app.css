@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600&display=swap');
 
-
-body, h1, h2, p {
+body,
+h1,
+h2,
+p {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   font-weight: 300;
   position: relative;
@@ -18,22 +20,20 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
-
 /* loginPage CSS*/
-.loginPage{
+.loginPage {
   background: url('/LandingPage.png') no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-.login{
+.login {
   height: 235px;
   width: 195px;
   background-color: rgba(255, 255, 255, 0.13);
@@ -51,13 +51,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
 .login * {
   font-family: 'Poppins', sans-serif;
   color: #3b5165;
   outline: none;
   border: none;
-  
 }
 
 .login h2 {
@@ -87,34 +85,33 @@ body::-webkit-scrollbar {
 }
 
 .loginHeader {
-  z-index: 10; 
+  z-index: 10;
   text-align: center;
   margin-bottom: 20px;
   font-size: 2em;
-  color: #FFF;
-  margin: 0; 
-  -webkit-text-stroke: 0px #C0A3C2;
-  font: weight 600px;;
-  
+  color: #fff;
+  margin: 0;
+  -webkit-text-stroke: 0px #c0a3c2;
+  font: weight 600px;
 }
 
 .loginHeader h1 {
   font-family: Anton;
-  font-size: 3em; 
-  color: rgb(255, 255, 255); 
+  font-size: 3em;
+  color: rgb(255, 255, 255);
   font-weight: bold;
-  margin: 0; 
-  text-shadow:
-  -10px -10px 0 #C0A3C2,
-  0   -10px 0 #C0A3C2,
-  10px -10px 0 #C0A3C2,
-  10px  0   0 #C0A3C2,
-  10px  10px 0 #C0A3C2,
-  0    10px 0 #C0A3C2,
- -10px  10px 0 #C0A3C2,
- -10px  0   0 #C0A3C2;      
-  -webkit-background-clip: text; 
+  margin: 0;
+  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
+    10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
+    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
+  -webkit-background-clip: text;
   background-clip: text;
+}
+
+.loginForm {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
 }
 
 .login-button {
@@ -125,6 +122,7 @@ body::-webkit-scrollbar {
   font-weight: 300;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -142,14 +140,14 @@ body::-webkit-scrollbar {
 
 /* HomePage CSS*/
 main {
-  background-image: url('/HomePage.png'); 
+  background-image: url('/HomePage.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   text-align: center;
   color: white;
   overflow: auto;
@@ -161,30 +159,24 @@ main {
 
 h1 {
   font-family: Anton;
-  font-size: 10em; 
-  color: rgb(255, 255, 255); 
+  font-size: 10em;
+  color: rgb(255, 255, 255);
   font-weight: bold;
-  margin: 0; 
-  text-shadow:
-  -10px -10px 0 #C0A3C2,
-   0   -10px 0 #C0A3C2,
-   10px -10px 0 #C0A3C2,
-   10px  0   0 #C0A3C2,
-   10px  10px 0 #C0A3C2,
-   0    10px 0 #C0A3C2,
-  -10px  10px 0 #C0A3C2,
-  -10px  0   0 #C0A3C2;    
-  -webkit-background-clip: text; 
+  margin: 0;
+  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
+    10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
+    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
+  -webkit-background-clip: text;
   background-clip: text;
 }
 
 /* Nav-bar css*/
 
 a {
-  color: rgb(144, 117, 154); 
-  text-decoration:none;
-  font-weight: bold; 
-  font-size: 1.2rem; 
+  color: rgb(144, 117, 154);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 nav {
@@ -196,13 +188,12 @@ nav {
 
 /* Style the navigation links (NavLinks) */
 nav a {
-  color: rgb(0, 0, 0); 
-  text-decoration: none; 
-  margin-right: 1rem; 
-  font-weight: bold; 
-  font-size: 1.2rem; 
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
-
 
 nav a:hover {
   text-decoration: underline;
@@ -210,8 +201,8 @@ nav a:hover {
 
 nav a.active {
   background-color: #555;
-  border-radius: 4px; 
-  padding: 0.5rem 1rem; 
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
 }
 
 .page-wrapper {
@@ -225,27 +216,29 @@ nav a.active {
   z-index: 100;
 }
 
-.page-wrapper, .sticky-header, nav {
+.page-wrapper,
+.sticky-header,
+nav {
   margin: 0;
   padding: 0;
 }
 
-
 .navigation-button {
   align-items: center;
-  background-color: #FCFCFD;
+  background-color: #fcfcfd;
   border-radius: 4px;
   border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
-  color: #36395A;
+  color: #36395a;
   cursor: pointer;
   display: flex;
   flex-direction: row; /* Stack content vertically */
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
   text-align: center; /* Center text */
-  font-family: "JetBrains Mono",monospace;
+  font-family: 'JetBrains Mono', monospace;
   height: 48px;
   justify-content: center;
   line-height: 1;
@@ -255,29 +248,30 @@ nav a.active {
   position: relative;
   text-align: left;
   text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow 0.15s, transform 0.15s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
-  will-change: box-shadow,transform;
+  will-change: box-shadow, transform;
   font-size: 18px;
 }
 
 .button-30:focus {
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
 }
 
 .button-30:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
 .button-30:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
+  box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
 }
-
 
 /* AddNotesPage.css */
 
@@ -311,7 +305,7 @@ nav a.active {
   color: #ffffff;
 }
 
-.topics{
+.topics {
   background: url('/TopicsPage.png') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
@@ -330,7 +324,6 @@ nav a.active {
   justify-content: center;
   color: #ffffff;
 }
-
 
 .quiz {
   background: url('/QuizPage.png') center/cover no-repeat;
