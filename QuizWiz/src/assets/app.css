@@ -334,7 +334,6 @@ nav {
   justify-content: center;
   color: #ffffff;
 }
-
 /* Style Quiz Istruction page */
 .quiz-instructions-wrapper {
   display: flex;
@@ -342,7 +341,7 @@ nav {
 }
 
 .quiz-icon-container {
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .quiz-icon {
