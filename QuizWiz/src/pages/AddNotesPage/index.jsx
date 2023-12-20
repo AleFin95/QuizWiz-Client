@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { LearnInstructionsWrapper } from "../../components";
-import NoteForm from "../../components/NoteForm";
+import NoteForm from "../../components/NoteForm"; // Ensure this is the correct path to your NoteForm component
 import { useAuth } from "../../contexts";
 
 function AddNotesPage() {
   const { state } = useLocation();
-
-  const [initialMinutes] = useState(state === null ? 10 : state.minutes);
+  const [initialMinutes] = useState(state?.minutes ?? 10);
   const { remainingSeconds, setRemainingSeconds } = useAuth();
   const [isRunning, setIsRunning] = useState(false);
 
@@ -31,20 +30,18 @@ function AddNotesPage() {
     return () => clearInterval(timer);
   }, [initialMinutes, isRunning, remainingSeconds, setRemainingSeconds]);
 
+  // Format the remaining time into MM:SS format
+  const formattedTime = `${Math.floor(remainingSeconds / 60)
+    .toString()
+    .padStart(2, "0")}:${(remainingSeconds % 60).toString().padStart(2, "0")}`;
+
   return (
-    <>
-      <div className="addNotes">
-        <h1>Add Note</h1>
-
-        <p>
-          Countdown Timer: {Math.floor(remainingSeconds / 60)}:
-          {remainingSeconds % 60}
-        </p>
-
-        <NoteForm />
-      </div>
+    <div className="addNotesPage">
+      <h1>Add Note</h1>
+      <p>Countdown Timer: {formattedTime}</p>
+      <NoteForm />
       <LearnInstructionsWrapper />
-    </>
+    </div>
   );
 }
 
