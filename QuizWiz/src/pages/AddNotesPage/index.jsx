@@ -51,21 +51,15 @@ function AddNotesPage() {
   };
 
     return (
-<<<<<<< HEAD
         <div className='addNotes'>
-  
-=======
-      <>
-        <div>
->>>>>>> f2612153f246b287e6a34a769182fdc734d51b5b
             <h1>Add Note</h1>
            
              <p>Countdown Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</p> 
             
             <NoteForm />
-        </div>
+
         <LearnInstructionsWrapper />
-      </>
+      </div>
     )
 }
 
