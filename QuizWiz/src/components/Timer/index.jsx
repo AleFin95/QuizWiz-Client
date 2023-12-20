@@ -3,7 +3,7 @@ import {useAuth} from "../../contexts"
 import {useNavigate} from 'react-router-dom' 
 
 const Timer = ({flag_page}) => {
-    console.log("flag_page=",flag_page)
+
   const [initialMinutes, setInitialMinutes] = useState(0);
    const { remainingSeconds, setRemainingSeconds } = useAuth()
   // const [remainingSeconds, setRemainingSeconds] = useState(0);
@@ -12,7 +12,7 @@ const Timer = ({flag_page}) => {
   const navigate=useNavigate()
   useEffect(() => {
     let timer;
-    console.log("remainingSeconds=",remainingSeconds)
+    
     if (isRunning && remainingSeconds > 0) {
       timer = setInterval(() => {
         setRemainingSeconds((prevSeconds) => prevSeconds - 1);
@@ -57,39 +57,33 @@ const Timer = ({flag_page}) => {
   };
 
   const handleClick= ()=>{
-    console.log("Timer initialminutes",initialMinutes)
+   
     navigate('addnotes', { state: {minutes: initialMinutes} })
 
   }
 
   return (
-    <div>
-     
-
-
-
-      {flag_page === 'quiz' ? (
+    <>
+          {flag_page === 'quiz' ? (
         <>
          <h2>Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h2>
         </>
 
       ) : (
 
-        <>
-        <h1>Timer: {Math.floor(remainingSeconds / 60)}:{remainingSeconds % 60}</h1>
+        <div className='timer'>
+            <h1>Timer</h1>
+            <img src="Timer.jpg" alt="Your Image" className="timer-image" />
             <label>
                 Set Minutes:
                 <input type="number" min={0} value={initialMinutes} onChange={handleMinutesChange} />
             </label>
 
             <button onClick={handleClick}>Start</button>
-            {/* <button onClick={stopTimer}>Stop</button>
-             <button onClick={resetTimer}>Reset</button> */}
-        </>
+        </div>
         
       )}
-      {/* <button onClick={handleClick} >Start</button> */}
-    </div>
+    </>
   );
 };
 
