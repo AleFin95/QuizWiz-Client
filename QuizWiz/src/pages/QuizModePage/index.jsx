@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { QuizInstructionsWrapper } from '../../components';
+import { AnswersBox } from '../../components'
 
 
 const QuizModePage = () => {
@@ -16,7 +17,7 @@ const QuizModePage = () => {
       }
   
       try {
-        const response = await fetch(`https://quizwiz-api.onrender.com/questions?topicId=${selectedTopicId}`);
+        const response = await fetch(`https://quizwiz-api.onrender.com/questions?subjectId=${selectedTopicId.subjectId}`);
         const responseData = await response.json();
   
         if (Array.isArray(responseData.data) && responseData.data.length > 0) {
@@ -52,6 +53,9 @@ const QuizModePage = () => {
           <div key={questions[currentQuestionIndex]._id}>
             <p>{questions[currentQuestionIndex].name}</p>
           </div>
+          <div>
+       <AnswersBox/>   
+       </div>
           <button onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0}>
             &lt; Prev Question
           </button>

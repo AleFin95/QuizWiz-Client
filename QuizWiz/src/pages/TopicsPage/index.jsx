@@ -22,7 +22,8 @@ const TopicsPage = () => {
 }, [])
 
     const toggleTopic = (topicId) => {
-      setSelectedTopic((prev) => (prev === topicId ? null : topicId));
+      setSelectedTopic((prev) => 
+      (prev === topicId ? null : topicId));
     };
 
 const onEnterPress = () => {
