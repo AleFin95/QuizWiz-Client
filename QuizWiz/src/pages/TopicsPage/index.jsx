@@ -14,10 +14,13 @@ const TopicsPage = () => {
 
   useEffect(() => {
     async function loadTopics() {
-      const response = await fetch('https://quizwiz-api.onrender.com/subjects');
-      const data = await response.json();
-      //console.log(data)
-      setTopics(data);
+      try {
+        const response = await fetch('https://quizwiz-api.onrender.com/subjects');
+        const data = await response.json();
+        setTopics(data);
+      } catch (error) {
+        console.error('Error loading topics:', error);
+      }
     }
 
     loadTopics();
@@ -28,7 +31,6 @@ const TopicsPage = () => {
   };
 
   const onEnterPress = () => {
-    // Get the first topic that matches the filter
     const filteredTopics = topics.data.filter((t) =>
       t.name.toLowerCase().includes(textFilter.toLowerCase())
     );
@@ -62,29 +64,31 @@ const TopicsPage = () => {
   }
 
   const startQuiz = () => {
-    localStorage.setItem('selectedTopic', JSON.stringify(selectedTopic));
-    console.log('Selected Topic:', selectedTopic);
-    navigateTo('/test/quiz');
+    if (selectedTopic !== null) {
+      localStorage.setItem('selectedTopic', JSON.stringify(selectedTopic));
+      console.log('Selected Topic:', selectedTopic);
+      navigateTo('/test/quiz');
+    } else {
+      console.error('Please select a topic before starting the quiz.');
+    }
   };
 
   return (
-    <>
     <div className='topics'>
-        <h2>Choose Topics</h2>
-        <TopicsFilter
-          textFilter={textFilter}
-          setTextFilter={setTextFilter}
-          onEnterPress={onEnterPress}
-        />
-        <div>{displayTopics()}</div>
-        <p>
-          <button type='button' button className='navigation-button' onClick={startQuiz}>
-            Start Quiz
-          </button>
-        </p>
-      </div>
+      <h2>Choose Topics</h2>
+      <TopicsFilter
+        textFilter={textFilter}
+        setTextFilter={setTextFilter}
+        onEnterPress={onEnterPress}
+      />
+      <div>{displayTopics()}</div>
+      <p>
+        <button type='button' className='navigation-button' onClick={startQuiz}>
+          Start Quiz
+        </button>
+      </p>
       <QuizInstructionsWrapper />
-    </>
+    </div>
   );
 };
 
