@@ -104,9 +104,9 @@ body::-webkit-scrollbar {
   color: rgb(255, 255, 255);
   font-weight: bold;
   margin: 0;
-  text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
+  /* text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
     10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
-    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2;
+    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2; */
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -303,17 +303,20 @@ nav a.active {
   color: #333; /* Change to your desired color */
 }
 
-.search-bar{
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
+.search-bar input{
+  border-radius: 20px;
+  border-style: none;
+}
+
+.search-bar input:active{
+  border-radius: 20px;
+  border-style: none;
 }
 
 .displaytopics {
   margin-top: 20px;
   height: 200px;
   width: 500px;
-  background-color: rgba(255, 255, 255, 0.13);
   border-radius: 10px;
   backdrop-filter: blur(10px);
   padding: 25px 35px;
@@ -325,10 +328,6 @@ nav a.active {
 }
 .displaytopics::-webkit-scrollbar {
   display: none;
-}
-
-.topic-label-container:active {
- color: aqua;
 }
 
 
