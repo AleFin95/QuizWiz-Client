@@ -188,9 +188,10 @@ a {
 }
 
 nav {
-  background: 'transparent';
-  position: 'absolute';
+  background: transparent; /* Remove quotes */
+  position: absolute; /* Remove quotes */
 }
+
 
 /* Style the navigation links (NavLinks) */
 nav a {
