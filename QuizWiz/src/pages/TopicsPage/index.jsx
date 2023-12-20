@@ -71,8 +71,8 @@ const TopicsPage = () => {
 
   return (
     <>
-      <div className='topics'>
-        <h1>TopicsPage</h1>
+    <div className='topics'>
+        <h2>Choose Topics</h2>
         <TopicsFilter
           textFilter={textFilter}
           setTextFilter={setTextFilter}

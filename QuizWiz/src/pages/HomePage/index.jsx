@@ -6,12 +6,10 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleLearnClick = () => {
-    // Navigate to the "/learn" route
     navigate('/learn');
   };
 
   const handleQuizClick = () => {
-    // Navigate to the "/test" route
     navigate('/test');
   };
 

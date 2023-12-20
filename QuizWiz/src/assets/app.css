@@ -7,7 +7,9 @@ p {
   margin: 0;
   padding: 0;
 }
-
+.h2{
+  font-size: 30rem;
+}
 body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -163,9 +165,6 @@ h1 {
   color: rgb(255, 255, 255);
   font-weight: bold;
   margin: 0;
-  /* text-shadow: -10px -10px 0 #c0a3c2, 0 -10px 0 #c0a3c2, 10px -10px 0 #c0a3c2,
-    10px 0 0 #c0a3c2, 10px 10px 0 #c0a3c2, 0 10px 0 #c0a3c2,
-    -10px 10px 0 #c0a3c2, -10px 0 0 #c0a3c2; */
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -202,7 +201,6 @@ nav a {
   font-size: 12px;
   font-weight: 600;
   font-family: 'Poppins';
-  letter-spacing: 2px;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -231,7 +229,7 @@ nav a.active {
   font-size: 15px;
   font-weight: 600;
   font-family: 'Poppins';
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
