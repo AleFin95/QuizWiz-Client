@@ -31,6 +31,7 @@ const PageWrapper = () => {
         <nav>
           <NavLink to='/'>Home</NavLink>
           {token && <NavLink to='/mynotes'>My Notes</NavLink>}
+          <NavLink to='/progress'>My Progress</NavLink>
           {token && (
             <NavLink to='/login' onClick={handleClick}>
               Log Out

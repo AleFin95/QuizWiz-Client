@@ -8,4 +8,5 @@ export { default as QuizInstructionsWrapper } from './QuizInstructionsWrapper';
 export { default as SignUpComponent } from './SignUpComponent';
 export { default as TopicLabel } from './TopicLabel';
 export { default as TopicsFilter } from './TopicsFilter';
+export { default as ScoreTable } from './ScoreTable'
 export {default as Timer} from "./Timer"
