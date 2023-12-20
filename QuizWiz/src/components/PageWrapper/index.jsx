@@ -6,29 +6,22 @@ const PageWrapper = () => {
   const { setToken, token } = useAuth();
   const navigateTo = useNavigate();
 
-  const handleLogout = async () => {
-    try {
-      const options = {
-        method: 'POST', // Use POST method for logout
-        headers: {
-          Authorization: localStorage.getItem('token')
-        }
-      };
-
-      const response = await fetch(
-        'https://quizwiz-api.onrender.com/users/logout',
-        options
-      );
-
-      if (response.status === 200) {
-        localStorage.removeItem('token');
-        setToken('');
-        navigateTo('/');
-      } else {
-        console.error('Logout failed:', response.status);
+  const handleClick = async () => {
+    const options = {
+      headers: {
+        Authorization: localStorage.getItem('token')
       }
-    } catch (error) {
-      console.error('Error during logout:', error);
+    };
+
+    const response = await fetch(
+      'https://quizwiz-api.onrender.com/users/logout',
+      options
+    );
+
+    if (response.status == 200) {
+      localStorage.removeItem('token');
+      setToken('');
+      navigateTo('/');
     }
   };
 
@@ -38,7 +31,11 @@ const PageWrapper = () => {
         <nav>
           <NavLink to='/'>Home</NavLink>
           {token && <NavLink to='/mynotes'>My Notes</NavLink>}
-          {token && <button onClick={handleLogout}>Log Out</button>}
+          {token && (
+            <NavLink to='/login' onClick={handleClick}>
+              Log Out
+            </NavLink>
+          )}
         </nav>
       </header>
     </div>
