@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { QuizInstructionsWrapper } from '../../components';
+import { QuizInstructionsWrapper,Timer } from '../../components';
+
 
 
 const QuizModePage = () => {
@@ -47,6 +48,7 @@ const QuizModePage = () => {
   return (
     <>
       <h1>QuizModePage</h1>
+      <Timer flag_page={"quiz"} /> 
       {questions.length > 0 && currentQuestionIndex < questions.length && (
         <div>
           <div key={questions[currentQuestionIndex]._id}>
