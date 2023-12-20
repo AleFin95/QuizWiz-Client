@@ -10,4 +10,4 @@ export { default as TopicsPage } from './TopicsPage';
 
 export { default as MyNotesPage } from './MyNotesPage';
 export { default as NotFoundPage } from './NotFoundPage';
-export { default as Progress } from './ProgressPage'
+export { default as Progress } from './ProgressPage';
