@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader';
 import Swal from 'sweetalert2';
 import { AnswersBox, QuizInstructionsWrapper, Timer } from '../../components';
 
@@ -24,7 +25,7 @@ const QuizModePage = () => {
           })
         };
         const response = await fetch(
-          `http://localhost:3000/questions`,
+          `https://quizwiz-api.onrender.com/questions`,
           options
         );
         const data = await response.json();
@@ -33,7 +34,7 @@ const QuizModePage = () => {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: data.error
+            text: data
           }).then(() => navigate('/'));
         }
 
@@ -78,12 +79,18 @@ const QuizModePage = () => {
   return (
     <>
       <div className='quiz'>
+        {!isQuestionsGenerated && (
+          <div className='loading-container'>
+            <h2>Generating questions from your notes...</h2>
+            <ClimbingBoxLoader color='#36d7b7' size={25} />
+          </div>
+        )}
         {isQuestionsGenerated && (
           <>
-            <Timer flag_page={'quiz'} />
             {questions.length > 0 &&
               currentQuestionIndex < questions.length && (
                 <div className='question-container'>
+                  <Timer flag_page={'quiz'} length={questions.length} />
                   <div key={questions[currentQuestionIndex]._id}>
                     <h3>{questions[currentQuestionIndex].name}</h3>
                   </div>
