@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import '../../assets/app.css';
 import { SignUpComponent } from '../../components';
 import { useAuth } from '../../contexts';
@@ -35,6 +36,23 @@ const Login = () => {
         const { token } = await response.json();
         localStorage.setItem('token', token);
         setToken(token);
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+
+        Toast.fire({
+          icon: 'success',
+          title: 'You have successfully logged in'
+        });
         navigateTo('/');
       } else {
         console.error('Login failed');
