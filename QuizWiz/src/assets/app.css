@@ -303,6 +303,9 @@ textarea {
   color: white !important; /* Replace with your desired color */
 }
 
+#subject.form-control {
+  color: white; /* Replace with your desired color */
+}
 .content textarea {
   font-size: large;
   width: 500px;
