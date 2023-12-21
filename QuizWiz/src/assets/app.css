@@ -288,14 +288,22 @@ textarea {
   resize: none;
   border-radius: 5px;
   border-style: none;
-  text-align: left; /* Center text horizontally */
+  text-align: left;
   margin-bottom: 5px;
   background: transparent;
-  color: rgb(255, 255, 255);
   padding-left: 10px;
   padding-top: 10px;
-  font-family:'Poppins';
+  font-family: 'Poppins';
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
+.title .form-control {
+  color: white !important; /* Replace with your desired color */
+}
+
+
 .content textarea {
   font-size: large;
   width: 500px;
