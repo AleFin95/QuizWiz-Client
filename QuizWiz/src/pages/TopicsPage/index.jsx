@@ -75,13 +75,13 @@ const TopicsPage = () => {
 
   return (
     <div className='topics'>
-      <h2>Choose Topics</h2>
+      <h2 className='page'>Choose Topics</h2>
       <TopicsFilter
         textFilter={textFilter}
         setTextFilter={setTextFilter}
         onEnterPress={onEnterPress}
       />
-      <div>{displayTopics()}</div>
+      <div className='displaytopics'>{displayTopics()}</div>
       <p>
         <button type='button' className='navigation-button' onClick={startQuiz}>
           Start Quiz
