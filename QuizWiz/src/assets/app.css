@@ -185,11 +185,11 @@ nav {
   padding: 10px;
   justify-content: center;
   align-items: center;
-  position: fixed; /* Set position to fixed */
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  background: transparent; /* Add a background color if needed */
+  background: transparent;
   z-index: 1000; 
   height: 50px;
 }
@@ -201,7 +201,7 @@ nav a {
   margin: 20px;
   background: rgb(233, 238, 238);
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   color: rgb(158, 124, 163);
   font-size: 12px;
   font-weight: 600;
@@ -266,19 +266,37 @@ nav a.active {
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  
+}
+
+.form-control:focus {
+  outline: none; 
+}
+.form-control:active{
+  transform: translateY(2px);
+}
+
+.form-control .title{
+color: #080710;
+}
+.addNotesPage .title{
+  margin-top: 50px;
+  color: #ffffff;
 }
 
 textarea {
   resize: none;
   border-radius: 5px;
   border-style: none;
-  text-align: left;
-  justify-content: center;
+  text-align: left; /* Center text horizontally */
   margin-bottom: 5px;
   background: transparent;
-  color: white;
-  
+  color: rgb(255, 255, 255);
+  padding-left: 10px;
+  padding-top: 10px;
+  font-family:'Poppins';
 }
+
 
 .content textarea {
   font-size: large;
@@ -291,10 +309,12 @@ textarea {
   );
   overflow: hidden;
   padding: 8px;
+  border: 0;
+  color: #080710;
 }
 .save-button{
   width: 150px;
-  background-color: #ffffff;
+  background-color: #e3ffff;
   color: #080710;
   font-size: 13px;
   font-weight: 600;
@@ -426,24 +446,41 @@ textarea {
 .page-title {
   font-size: 24px;
   font-weight: bold;
-  color: #333; /* Change to your desired color */
+  color: #333;
 }
 
 .search-bar input {
-  margin-top: 30px;
-  margin-left: 15px;
-  border-radius: 20px;
+  resize: none;
+  border-radius: 5px;
   border-style: none;
+  text-align: left; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family:'Poppins';
+  font-size: 20px;
   text-align: center;
-  height: 20px;
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 3px );
+-webkit-backdrop-filter: blur( 3px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.search-bar input:focus {
+  outline: none; 
 }
 
 
 .search-bar input:active {
-  border-radius: 20px;
-  border-style: none;
+  
+  outline: none; 
 }
-
 
 
 .displaytopics {
@@ -485,13 +522,15 @@ textarea {
 /* Style Quiz Istruction page */
 .quiz-instructions-wrapper {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   z-index: 1000;
+
 }
+
 
 .quiz-icon-container {
   margin-bottom: 10px;
@@ -515,14 +554,22 @@ text-align: left;
 }
 
 .quiz-instructions-container {
-  display: none;
   flex-direction: column;
-  background-color: rgba(109, 155, 169, 0.655);
+  background-color: rgba(109, 155, 169, 0.522);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   border-radius: 10px;
   color: #fff;
+  width: 400px;
+  max-height: 350px; /* Set a maximum height */
+  overflow-y: auto;
+  backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+}
+
+.quiz-instructions-container::-webkit-scrollbar {
+  display: none;
 }
 
 .visible {
@@ -652,6 +699,10 @@ overflow: hidden;
 }
 
 /* Quiz Page */
+
+.quiz h2{
+  margin-top: 100px;
+}
 .question-container {
   display: flex;
   align-items: center;
@@ -677,7 +728,7 @@ overflow: hidden;
   border: none;
   border-radius: 10px;
   color: rgb(158, 124, 163);
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 600;
   font-family: "Poppins";
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),

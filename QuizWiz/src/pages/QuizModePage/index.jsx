@@ -78,7 +78,6 @@ const QuizModePage = () => {
   return (
     <>
       <div className='quiz'>
-        <h1>Quiz</h1>
         {isQuestionsGenerated && (
           <>
             <Timer flag_page={'quiz'} />
@@ -86,7 +85,7 @@ const QuizModePage = () => {
               currentQuestionIndex < questions.length && (
                 <div className='question-container'>
                   <div key={questions[currentQuestionIndex]._id}>
-                    <h2>{questions[currentQuestionIndex].name}</h2>
+                    <h3>{questions[currentQuestionIndex].name}</h3>
                   </div>
                   <div>
                     <AnswersBox

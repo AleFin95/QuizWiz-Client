@@ -12,8 +12,7 @@ const TopicsFilter = ({ textFilter, setTextFilter, onEnterPress }) => {
   return (
     <div className="search-bar">
       <label>
-        Search a Topic:
-        <input type="text" value={textFilter} onChange={updateTextFilter} onKeyDown={handleKeyDown} />
+        <input type="text" value={textFilter} onChange={updateTextFilter} onKeyDown={handleKeyDown} placeholder="Search topic here..."/>
       </label>
     </div>
   );
