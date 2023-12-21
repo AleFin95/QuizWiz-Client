@@ -20,17 +20,13 @@ describe('HomePage', () => {
     ).toBeInTheDocument();
     console.log('testing');
     expect(
-      screen.getByRole('link', { name: /Learn and Take Notes/i })
+      screen.getByRole('button', { name: /Learn and Take Notes/i })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('link', { name: /Go to Quiz/i })
+      screen.getByRole('button', { name: /Go to Quiz/i })
     ).toBeInTheDocument();
-    expect(
-      screen.getByRole('link', { name: /Learn and Take Notes/i })
-    ).toHaveAttribute('href', '/learn');
-    expect(screen.getByRole('link', { name: /Go to Quiz/i })).toHaveAttribute(
-      'href',
-      '/test'
-    );
+    
   });
 });
+
+

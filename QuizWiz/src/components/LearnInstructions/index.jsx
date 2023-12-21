@@ -16,6 +16,7 @@ const LearnInstructions = () => {
           icon={faInfoCircle}
           className='quiz-icon'
           onClick={handleIconClick}
+          data-testid='icon-faInfoCircle'
         />
       </div>
       <div
