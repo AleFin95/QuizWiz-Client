@@ -56,12 +56,12 @@ describe('QuizInstructions', () => {
     
       it('navigates to the correct route when clicked', () => {
         render(
-          <MemoryRouter initialEntries={['/']}>
+          <MemoryRouter initialEntries={['/mynotes']}>
             <QuizInstructions />
           </MemoryRouter>
         );
       
-        // Use screen to query for the link element
+
         const linkElement = screen.getByRole('link', { name: /My Notes/i });
       
         fireEvent.click(linkElement);
