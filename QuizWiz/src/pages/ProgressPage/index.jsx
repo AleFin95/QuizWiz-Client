@@ -30,7 +30,7 @@ function Progress() {
 
 
   return (
-    <div className='ProgressPage'>
+    <div className='ProgressPage' data-testid="progress-page">
         <h2>My Progress</h2>
         <div className="leaderboardContainer">
           <table className="leaderboardTable">
