@@ -448,6 +448,7 @@ textarea {
 }
 
 .search-bar input {
+  width: 50vh;
   resize: none;
   border-radius: 5px;
   border-style: none;
@@ -480,7 +481,7 @@ textarea {
 
 .displaytopics {
   margin-top: 20px;
-  height: 250px;
+  height: 30vh;
   width: 500px;
   border-radius: 10px;
   backdrop-filter: blur(10px);
