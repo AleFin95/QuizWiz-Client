@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600&display=swap");
 
 body,
 h1,
@@ -11,7 +11,7 @@ p {
   font-size: 30rem;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   font-weight: 300;
   position: relative;
@@ -25,7 +25,7 @@ body::-webkit-scrollbar {
 
 /* loginPage CSS*/
 .loginPage {
-  background: url('/LandingPage.png') no-repeat center center fixed;
+  background: url("/LandingPage.png") no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   width: 100vw;
@@ -55,7 +55,7 @@ body::-webkit-scrollbar {
 }
 
 .login * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #3b5165;
   outline: none;
   border: none;
@@ -143,7 +143,7 @@ body::-webkit-scrollbar {
 
 /* HomePage CSS*/
 main {
-  background-image: url('/HomePage.png');
+  background-image: url("/HomePage.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -184,10 +184,13 @@ nav {
   padding: 10px;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed; /* Set position to fixed */
   width: 100%;
   top: 0;
   left: 0;
+  background: transparent; /* Add a background color if needed */
+  z-index: 1000; 
+  height: 50px;
 }
 
 /* Style the navigation links (NavLinks) */
@@ -201,7 +204,7 @@ nav a {
   color: rgb(158, 124, 163);
   font-size: 12px;
   font-weight: 600;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -227,7 +230,7 @@ nav a.active {
   color: rgb(125, 88, 131);
   font-size: 15px;
   font-weight: 600;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   letter-spacing: 1px;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
@@ -255,7 +258,7 @@ nav a.active {
 /* AddNotesPage.css */
 
 .addNotesPage {
-  background: url('/AddNotePage.png') center/cover no-repeat;
+  background: url("/AddNotePage.png") center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -264,9 +267,60 @@ nav a.active {
   color: #ffffff;
 }
 
+textarea {
+  resize: none;
+  border-radius: 5px;
+  border-style: none;
+  text-align: left;
+  justify-content: center;
+  margin-bottom: 5px;
+  background: transparent;
+  color: white;
+  
+}
+
+.content textarea {
+  font-size: large;
+  width: 500px;
+  height: 300px;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  overflow: hidden;
+  padding: 8px;
+}
+.save-button{
+  width: 150px;
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Poppins";
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  box-shadow: -7px -7px 20px 0 rgba(58, 115, 140, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.save-button:hover {
+  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.save-button:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
 /*Timer page: /learn*/
 .timer {
-  background: url('/TimerPage.png') center/cover no-repeat;
+  background: url("/TimerPage.png") center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -325,7 +379,7 @@ nav a.active {
   color: #080710;
   font-size: 13px;
   font-weight: 600;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   border-radius: 25px;
   cursor: pointer;
   margin-top: 10px;
@@ -358,7 +412,7 @@ nav a.active {
   font-family: Anton;
 }
 .topics {
-  background: url('/TopicsPage.png') center/cover no-repeat;
+  background: url("/TopicsPage.png") center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -405,7 +459,7 @@ nav a.active {
 }
 
 .results {
-  background: url('/ResultsPage.png') center/cover no-repeat;
+  background: url("/ResultsPage.png") center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -415,7 +469,7 @@ nav a.active {
 }
 
 .quiz {
-  background: url('/QuizPage.png') center/cover no-repeat;
+  background: url("/QuizPage.png") center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -464,11 +518,9 @@ nav a.active {
   display: none;
 }
 
-
-
 /* My notes page */
 .myNotesPage {
-  background: url('/MyNotesPage.png') center/cover no-repeat;
+  background: url("/MyNotesPage.png") center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -509,10 +561,10 @@ nav a.active {
 .note-title h3,
 .note-content p {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .note-content p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   color: #080710;
 }
@@ -578,7 +630,7 @@ nav a.active {
   color: rgb(158, 124, 163);
   font-size: 12px;
   font-weight: 600;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -614,5 +666,5 @@ nav a.active {
   left: 0;
   bottom: 0;
   width: 100%;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
