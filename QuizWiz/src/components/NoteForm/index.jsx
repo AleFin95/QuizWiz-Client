@@ -114,48 +114,53 @@ const NoteForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className='title'>
-        <label htmlFor='title' className='form-label'>
-          <textarea
-            id='title'
-            name='title'
-            placeholder='Title'
-            className='form-control'
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-          />
-        </label>
-      </div>
+      <div className='note-form-container'>
+        <div className='title'>
+          <label htmlFor='title' className='form-label'>
+            <textarea
+              id='title'
+              name='title'
+              required
+              placeholder='Title'
+              className='form-control'
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
+          </label>
+        </div>
 
-      <div className='subject'>
-        <label htmlFor='subject' className='form-label'>
-          <textarea
-            id='subject'
-            name='subject'
-            placeholder='Subject'
-            className='form-control'
-            onChange={(e) => setSubject(e.target.value)}
-            value={subject}
-          />
-        </label>
-      </div>
+        <div className='subject'>
+          <label htmlFor='subject' className='form-label'>
+            <textarea
+              required
+              id='subject'
+              name='subject'
+              placeholder='Subject'
+              className='form-control'
+              onChange={(e) => setSubject(e.target.value)}
+              value={subject}
+            />
+          </label>
+        </div>
 
-      <div className='content'>
-        <label htmlFor='content' className='form-label'>
-          <textarea
-            id='content'
-            name='content'
-            placeholder='Write your notes here...'
-            className='form-control'
-            onChange={(e) => setContent(e.target.value)}
-            value={content}
-          />
-        </label>
-      </div>
-      <div>
-        <button type='submit' className='save-button'>
-          Save
-        </button>
+        <div className='content'>
+          <label htmlFor='content' className='form-label'>
+            <textarea
+              required
+              id='content'
+              name='content'
+              placeholder='Write your notes here...'
+              className='form-control'
+              onChange={(e) => setContent(e.target.value)}
+              value={content}
+            />
+          </label>
+        </div>
+        <div>
+          <button type='submit' className='save-button'>
+            Save
+          </button>
+        </div>
       </div>
     </form>
   );

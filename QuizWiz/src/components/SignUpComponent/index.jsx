@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const SignUpComponent = ({ handleSignUpClick }) => {
   const [username, setUsername] = useState('');
@@ -26,12 +27,40 @@ const SignUpComponent = ({ handleSignUpClick }) => {
         options
       );
 
+      const data = await response.json();
+
       if (response.status === 201) {
         setRegistrationSuccessful(true);
         handleSignUpClick();
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+
+        Toast.fire({
+          icon: 'success',
+          title: 'You have registered'
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: `Registration error: ${data.error}`
+        });
       }
     } catch (error) {
-      console.error('Registration error:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: error
+      });
     }
   };
   return (
@@ -66,7 +95,11 @@ const SignUpComponent = ({ handleSignUpClick }) => {
             <input type='submit' value='Register' className='login-button' />
             <p>
               Got an account?
-              <button type='button' onClick={handleSignUpClick}>
+              <button
+                type='button'
+                className='login-button'
+                onClick={handleSignUpClick}
+              >
                 Log in
               </button>
             </p>
