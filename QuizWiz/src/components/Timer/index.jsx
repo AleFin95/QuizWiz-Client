@@ -117,8 +117,15 @@ const Timer = ({ flag_page }) => {
     return () => clearInterval(timer);
   }, [isRunning, remainingSeconds, navigate, flag_page]);
 
+  useEffect(() => {
+    // Start the timer when flag_page is 'quiz' and the timer is not already running
+    if (flag_page === 'quiz' && !isRunning) {
+      startTimer();
+    }
+  }, []);
+
   const startTimer = () => {
-    const initialTime = flag_page === 'quiz' ? 25 : initialMinutes;
+    const initialTime = flag_page === 'quiz' ? 60 : initialMinutes;
     setRemainingSeconds(initialTime * 60);
     setIsRunning(true);
   };
@@ -141,6 +148,7 @@ const Timer = ({ flag_page }) => {
         </h2>
       ) : (
         <div className='timer'>
+          <h1>Set your time</h1>
           <input
             type='range'
             min='1'
