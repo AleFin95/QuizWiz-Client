@@ -1,9 +1,9 @@
 import * as matchers from '@testing-library/jest-dom/matchers';
-import { render, screen, cleanup, fireEvent } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { describe, expect, it, beforeEach } from 'vitest';
-import QuizInstructions from './index';
 import { MemoryRouter } from 'react-router-dom';
+import { beforeEach, describe, expect, it } from 'vitest';
+import QuizInstructions from './index';
 
 expect.extend(matchers);
 
@@ -31,10 +31,10 @@ describe('QuizInstructions', () => {
     );
 
     const quizInstructionsHeader = screen.getByRole('heading', {
-      name: 'Quiz Instructions',
+      name: 'Quiz Instructions'
     });
     const welcomeHeader = screen.getByRole('heading', {
-      name: 'Time to Challenge Yourself !',
+      name: 'Time to Challenge Yourself !'
     });
 
     const selectTopicItem = screen.getByText('Select a Topic:');
