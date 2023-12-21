@@ -42,3 +42,5 @@ const QuizInstructions = () => {
 };
 
 export default QuizInstructions;
+
+
