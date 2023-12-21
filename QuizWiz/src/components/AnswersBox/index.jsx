@@ -34,7 +34,7 @@ const Answers = ({
           <button
             disabled={disabled}
             value={answer.isCorrect}
-            className='answer'
+            className='button-83'
             key={answer._id}
             onClick={(e) => handleClick(e, answer.isCorrect)}
           >

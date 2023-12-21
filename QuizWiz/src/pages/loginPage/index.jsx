@@ -54,11 +54,13 @@ const Login = () => {
           title: 'You have successfully logged in'
         });
         navigateTo('/');
-      } else {
-        console.error('Login failed');
       }
     } catch (error) {
-      console.error('Login error:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: error
+      });
     }
   };
 
@@ -95,7 +97,11 @@ const Login = () => {
               <input type='submit' value='Log in' className='login-button' />
               <p>
                 No account?
-                <button type='button' onClick={handleSignUpClick}>
+                <button
+                  type='button'
+                  className='login-button'
+                  onClick={handleSignUpClick}
+                >
                   Sign up
                 </button>
               </p>

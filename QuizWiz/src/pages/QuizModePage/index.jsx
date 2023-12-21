@@ -36,7 +36,7 @@ const QuizModePage = () => {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: data
+            text: data.error
           }).then(() => navigate('/'));
         }
 
@@ -60,7 +60,7 @@ const QuizModePage = () => {
     };
 
     loadQuestions();
-  }, []);
+  }, [questions]);
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -109,7 +109,7 @@ const QuizModePage = () => {
     if (response.status === 201) {
       Swal.fire({
         icon: 'success',
-        title: `Congrats on completing the quiz! You scored ${score}!`
+        title: `Congrats on completing the quiz! You scored ${score}/${questions.length}!`
       });
       navigate('/progress');
     }
@@ -147,14 +147,17 @@ const QuizModePage = () => {
                     <button
                       className='navigation-button'
                       onClick={handleNextQuestion}
-                      hidden={currentQuestionIndex === questions.length - 1}
+                      hidden={
+                        currentQuestionIndex === questions.length - 1 ||
+                        disabled === false
+                      }
                     >
                       Next &gt;
                     </button>
                     <button
                       className='navigation-button'
                       onClick={handleSubmit}
-                      hidden={currentQuestionIndex === questions.length}
+                      hidden={currentQuestionIndex !== questions.length - 1}
                     >
                       Submit
                     </button>
