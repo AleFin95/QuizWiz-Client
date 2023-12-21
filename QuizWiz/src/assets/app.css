@@ -464,16 +464,7 @@ nav a.active {
   display: none;
 }
 
-.footer {
-  color: rgba(144, 117, 154, 00.5rem);
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  font-family: 'Poppins';
-}
+
 
 /* My notes page */
 .myNotesPage {
@@ -613,4 +604,15 @@ nav a.active {
 .answer[disabled] {
   pointer-events: none;
   opacity: 0.7;
+}
+
+.footer {
+  color: rgba(144, 117, 154, 00.5rem);
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Poppins';
 }
