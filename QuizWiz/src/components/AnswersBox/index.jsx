@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const Answers = ({ answers, currentQuestionIndex }) => {
+  const [scores, setScores] = useState([]);
   const [disabled, setDisabled] = useState(false);
-  const [correct, setCorrect] = useState(false);
   const [currentAnswers, setCurrentAnswers] = useState([]);
 
   useEffect(() => {
@@ -20,14 +20,14 @@ const Answers = ({ answers, currentQuestionIndex }) => {
     };
 
     fetchCurrentAnswers();
+    console.log();
   }, [currentQuestionIndex]);
-
-  useEffect(() => {}, [disabled]);
 
   const handleClick = (e, isCorrect) => {
     if (isCorrect) {
       e.target.classList.add('answer-correct');
 
+      setScores([...scores, 1]);
       setDisabled(true);
     } else {
       e.target.classList.add('answer-incorrect');
@@ -35,13 +35,12 @@ const Answers = ({ answers, currentQuestionIndex }) => {
       let answers = e.target.parentElement.children;
 
       for (let i = 0; i < answers.length; i++) {
-        console.log(answers[i].value);
         if (answers[i].value === 'true') {
-          console.log('access');
           answers[i].classList.add('answer-correct');
         }
       }
 
+      setScores([...scores, 0]);
       setDisabled(true);
     }
   };
