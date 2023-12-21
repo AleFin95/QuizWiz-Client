@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotFoundPage Component > should match snapshot 1`] = `
+<DocumentFragment>
+  <h2>
+    NotFoundPage
+  </h2>
+</DocumentFragment>
+`;
