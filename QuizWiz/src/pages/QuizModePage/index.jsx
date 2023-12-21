@@ -66,10 +66,13 @@ const QuizModePage = () => {
     }
   };
 
-  const handlePrevQuestion = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
-    }
+  const handleSubmit = () => {
+    const options = {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      },
+      method: 'POST'
+    };
   };
 
   return (
@@ -89,22 +92,23 @@ const QuizModePage = () => {
                     <AnswersBox
                       answers={answers}
                       currentQuestionIndex={currentQuestionIndex}
+                      length={questions.length}
                     />
                   </div>
                   <div className='navigation-buttons-container'>
-                    <button
-                      className='navigation-button'
-                      onClick={handlePrevQuestion}
-                      hidden={currentQuestionIndex === 0}
-                    >
-                      &lt; Previous
-                    </button>
                     <button
                       className='navigation-button'
                       onClick={handleNextQuestion}
                       hidden={currentQuestionIndex === questions.length - 1}
                     >
                       Next &gt;
+                    </button>
+                    <button
+                      className='navigation-button'
+                      onClick={handleSubmit}
+                      hidden={currentQuestionIndex === questions.length}
+                    >
+                      Submit
                     </button>
                   </div>
                 </div>

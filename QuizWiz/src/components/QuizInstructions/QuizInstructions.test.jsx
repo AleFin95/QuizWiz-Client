@@ -2,9 +2,7 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 import { render, screen, cleanup, fireEvent} from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import QuizInstructions from '.';
-import { AuthProvider } from '../../contexts';
 import { MemoryRouter } from 'react-router-dom';
-
 
 
 
