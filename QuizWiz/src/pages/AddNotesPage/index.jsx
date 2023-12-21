@@ -39,7 +39,7 @@ function AddNotesPage() {
     return (
       <div className="addNotesPage">
         <h1></h1>
-        <NoteForm />
+        <NoteForm id="note-form" />
         <LearnInstructionsWrapper />
         <p className="my-paragraph">Countdown Timer: {formattedTime}</p>
       </div>

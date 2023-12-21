@@ -1,149 +1,164 @@
-import React, { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-async function createNote(note) {
-  delete note.subject;
+const NoteForm = () => {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [subject, setSubject] = useState('');
+  const navigateTo = useNavigate();
 
-  const options = {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      authorization: localStorage.getItem("token"),
-    },
-    body: JSON.stringify(note),
-  };
-  console.log("options", options);
-  // const response = await fetch("http://localhost:3000/notes", options);
-  const response = await fetch(
-    "https://quizwiz-api.onrender.com/notes",
-    options
-  );
+  const createNote = async ({ title, content }) => {
+    try {
+      const options = {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: localStorage.getItem('token')
+        },
+        body: JSON.stringify({
+          title: title,
+          content: content
+        })
+      };
 
-  if (!response.ok) {
-    console.error(`Failed to create note: ${response.statusText}`);
+      const response = await fetch(
+        'https://quizwiz-api.onrender.com/notes',
+        options
+      );
 
-    throw new Error(`Failed to create note: ${response.statusText}`);
-  }
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
 
-  const responseData = await response.json();
-  console.log("Response data:", responseData);
-
-  return responseData;
-}
-
-async function createSubject(subject) {
-  const options = {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: localStorage.getItem("token"),
-    },
-    body: JSON.stringify(subject),
-  };
-  // const response = await fetch("http://localhost:3000/subjects", options);
-  const response = await fetch(
-    "https://quizwiz-api.onrender.com/subjects",
-    options
-  );
-
-  console.log("REspone from create subject=", response);
-  if (!response.ok) {
-    // Handle error, throw an exception, or return an error object
-    throw new Error(`Failed to create subject: ${response.statusText}`);
-  }
-
-  const createdSubject = await response.json();
-  const createdSubjectId = createdSubject._id;
-
-  return createdSubjectId;
-}
-
-function NoteForm({ note = "" }) {
-  useEffect(() => {
-    if (note) {
-      setFormData({
-        title: note.title,
-        content: note.content,
-        subject: note.subject,
+      if (response.status === 201) {
+        Toast.fire({
+          icon: 'success',
+          title: 'Created note successfully'
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `Failed to create notes: ${error.message}`
       });
     }
-  }, [note]);
-
-  // Innitial state for the Form
-  const initialFormState = {
-    title: "",
-    content: "",
-    subject: "",
   };
 
-  const [formData, setFormData] = useState(initialFormState);
+  const createSubject = async (subject) => {
+    try {
+      const options = {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: localStorage.getItem('token')
+        },
+        body: JSON.stringify(subject)
+      };
 
-  const handleChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value });
+      const response = await fetch(
+        'https://quizwiz-api.onrender.com/subjects',
+        options
+      );
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+
+      if (response.status === 201) {
+        Toast.fire({
+          icon: 'success',
+          title: 'Created subject successfully'
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `Failed to create subject: ${error.message}`
+      });
+    }
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const subjectId = await createSubject({ name: formData.subject });
+    await createSubject({ name: subject });
 
-    console.log("line 97 subjectId= ", subjectId);
+    await createNote({
+      title: title,
+      content: content
+    });
 
-    await createNote(formData);
-    setFormData({ ...initialFormState }); // Reset form data
-    // navigate(`/subjects/${subjectId}`);
+    navigateTo('/');
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="title">
-        <label htmlFor="title" className="form-label">
+      <div className='title'>
+        <label htmlFor='title' className='form-label'>
           <textarea
-            id="title"
-            name="title"
-            placeholder="Title"
-            className="form-control"
-            onChange={handleChange}
-            value={formData.title}
+            id='title'
+            name='title'
+            placeholder='Title'
+            className='form-control'
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
           />
         </label>
       </div>
 
-      <div className="subject">
-        <label htmlFor="subject" className="form-label">
-          
+      <div className='subject'>
+        <label htmlFor='subject' className='form-label'>
           <textarea
-            id="subject"
-            name="subject"
-            placeholder="Subject"
-            className="form-control"
-            onChange={handleChange}
-            value={formData.subject}
+            id='subject'
+            name='subject'
+            placeholder='Subject'
+            className='form-control'
+            onChange={(e) => setSubject(e.target.value)}
+            value={subject}
           />
         </label>
       </div>
 
-      <div className="content">
-        <label htmlFor="content" className="form-label">
+      <div className='content'>
+        <label htmlFor='content' className='form-label'>
           <textarea
-            id="content"
-            name="content"
-            placeholder="Write your notes here..."
-            className="form-control"
-            onChange={handleChange}
-            value={formData.content}
+            id='content'
+            name='content'
+            placeholder='Write your notes here...'
+            className='form-control'
+            onChange={(e) => setContent(e.target.value)}
+            value={content}
           />
         </label>
       </div>
       <div>
-        <button type="submit" className="save-button">
+        <button type='submit' className='save-button'>
           Save
         </button>
       </div>
     </form>
   );
-}
+};
 
 export default NoteForm;
