@@ -296,8 +296,6 @@ textarea {
   padding-top: 10px;
   font-family:'Poppins';
 }
-
-
 .content textarea {
   font-size: large;
   width: 500px;
@@ -427,6 +425,37 @@ textarea {
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
+
+/* CSS for h2 in Quiz mode */
+.timer h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  color: #333; /* Text color */
+}
+
+/* CSS for .timer container */
+.timer {
+  text-align: center; /* Center the content */
+}
+
+/* CSS for input[type="range"] */
+.timer input[type="range"] {
+  width: 400px; /* Adjust the width as needed */
+  height: 15px;
+  background: #303030;
+  outline: none;
+  border-radius: 15px;
+  margin: 0 auto; /* Center the input horizontally */
+  display: block; /* Make it a block element */
+}
+
+/* CSS for div displaying Set Minutes */
+.timer div {
+  margin-top: 10px; /* Add spacing between the input and text */
+  font-size: 1.5em; /* Adjust the font size as needed */
+  color: #393939; /* Text color */
+}
+
+
 
 .timer h2 {
   font-size: 70px;
