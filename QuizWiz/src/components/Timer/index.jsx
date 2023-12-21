@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from 'react';
 // import {useAuth} from "../../contexts"
-// import {useNavigate} from 'react-router-dom' 
+// import {useNavigate} from 'react-router-dom'
 
 // const Timer = ({flag_page}) => {
 
@@ -12,16 +12,15 @@
 //   const navigate=useNavigate()
 //   useEffect(() => {
 //     let timer;
-    
+
 //     if (isRunning && remainingSeconds > 0) {
 //       timer = setInterval(() => {
 //         setRemainingSeconds((prevSeconds) => prevSeconds - 1);
 //       }, 1000);
 //     } else if (isRunning && remainingSeconds === 0) {
-//     if (flag_page === 'quiz') {navigate('/test/quiz-results');} 
+//     if (flag_page === 'quiz') {navigate('/test/quiz-results');}
 //       setIsRunning(false);
-    
-      
+
 //     }
 
 //     return () => clearInterval(timer);
@@ -30,7 +29,7 @@
 //   const startTimer = () => {
 //     const initialTime = flag_page === 'quiz' ? 25 : initialMinutes;
 //     setRemainingSeconds(initialTime * 60);
-   
+
 //     setIsRunning(true);
 //   };
 
@@ -57,7 +56,7 @@
 //   };
 
 //   const handleClick= ()=>{
-   
+
 //     navigate('addnotes', { state: {minutes: initialMinutes} })
 
 //   }
@@ -81,7 +80,7 @@
 
 //             <button onClick={handleClick}>Start</button>
 //         </div>
-        
+
 //       )}
 //     </>
 //   );
@@ -91,9 +90,9 @@
 
 //slide version-for review
 
-import React, { useState, useEffect } from 'react';
-import { useAuth } from "../../contexts";
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts';
 
 const Timer = ({ flag_page }) => {
   const [initialMinutes, setInitialMinutes] = useState(0);
@@ -103,10 +102,10 @@ const Timer = ({ flag_page }) => {
 
   useEffect(() => {
     let timer;
-    
+
     if (isRunning && remainingSeconds > 0) {
       timer = setInterval(() => {
-        setRemainingSeconds(prevSeconds => prevSeconds - 1);
+        setRemainingSeconds((prevSeconds) => prevSeconds - 1);
       }, 1000);
     } else if (isRunning && remainingSeconds === 0) {
       if (flag_page === 'quiz') {
@@ -136,18 +135,23 @@ const Timer = ({ flag_page }) => {
   return (
     <>
       {flag_page === 'quiz' ? (
-        <h2>Timer: {Math.floor(remainingSeconds / 60)}:{String(remainingSeconds % 60).padStart(2, '0')}</h2>
+        <h2>
+          Timer: {Math.floor(remainingSeconds / 60)}:
+          {String(remainingSeconds % 60).padStart(2, '0')}
+        </h2>
       ) : (
         <div className='timer'>
-          <input 
-            type="range" 
-            min="0" 
-            max="60" 
-            value={initialMinutes} 
+          <input
+            type='range'
+            min='1'
+            max='60'
+            value={initialMinutes}
             onChange={handleSliderChange}
           />
           <div>Set Minutes: {initialMinutes}</div>
-          <button onClick={handleClick} disabled={isRunning}>Start</button>
+          <button onClick={handleClick} disabled={isRunning}>
+            Start
+          </button>
         </div>
       )}
     </>
