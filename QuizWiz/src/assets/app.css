@@ -300,11 +300,11 @@ textarea {
 }
 
 .title .form-control {
-  color: white !important; /* Replace with your desired color */
+  color: white !important; 
 }
 
 #subject.form-control {
-  color: white; /* Replace with your desired color */
+  color: white; 
 }
 .content textarea {
   font-size: large;
