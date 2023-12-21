@@ -75,7 +75,7 @@ const TopicsPage = () => {
 
   return (
     <div className='topics'>
-      <h2 className='page'>Choose Topics</h2>
+      <h2 className='page'></h2>
       <TopicsFilter
         textFilter={textFilter}
         setTextFilter={setTextFilter}

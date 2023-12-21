@@ -139,7 +139,6 @@ const Timer = ({ flag_page }) => {
         <h2>Timer: {Math.floor(remainingSeconds / 60)}:{String(remainingSeconds % 60).padStart(2, '0')}</h2>
       ) : (
         <div className='timer'>
-          <h1>Set your time</h1>
           <input 
             type="range" 
             min="0" 
