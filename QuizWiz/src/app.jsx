@@ -33,6 +33,7 @@ function App() {
               <Routes>
                 <Route path='/' element={<Pages.TimerPage />} />
                 <Route path='addnotes' element={<Pages.AddNotesPage />} />
+                <Route path='*' element={<Pages.NotFoundPage />} />
               </Routes>
             </>
           }
@@ -46,11 +47,12 @@ function App() {
                 <Route path='/' element={<Pages.TopicsPage />} />
                 <Route path='quiz' element={<Pages.QuizModePage />} />
                 <Route path='quiz/results' element={<Pages.ResultsPage />} />
+                <Route path='*' element={<Pages.NotFoundPage />} />
               </Routes>
             </>
           }
         />
-        <Route path='/progress' element={<Pages.Progress/>} />
+        <Route path='/progress' element={<Pages.Progress />} />
         <Route path='*' element={<Pages.NotFoundPage />} />
       </Routes>
     </AuthProvider>
