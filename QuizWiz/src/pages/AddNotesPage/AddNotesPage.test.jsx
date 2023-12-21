@@ -16,9 +16,6 @@ describe('AddNotesPage Component', () => {
       </MemoryRouter>
     );
 
-
     expect(screen.getByText(/Countdown Timer:/i)).toBeInTheDocument();
   });
-
-
-  });
+});

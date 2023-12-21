@@ -9,6 +9,8 @@ const QuizModePage = () => {
   const [answers, setAnswers] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isQuestionsGenerated, setIsQuestionsGenerated] = useState(false);
+  const [score, setScore] = useState(0);
+  const [disabled, setDisabled] = useState(false);
   const subjectId = JSON.parse(localStorage.getItem('selectedTopic'));
   const navigate = useNavigate();
 
@@ -34,7 +36,7 @@ const QuizModePage = () => {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: data
+            text: data.error
           }).then(() => navigate('/'));
         }
 
@@ -52,14 +54,13 @@ const QuizModePage = () => {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Error fetching questions:',
-          error
+          text: `Error fetching questions: ${error.data}`
         });
       }
     };
 
     loadQuestions();
-  }, []);
+  }, [questions]);
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -67,13 +68,51 @@ const QuizModePage = () => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleClick = (e, isCorrect) => {
+    if (isCorrect) {
+      e.target.classList.add('answer-correct');
+
+      setScore((prev) => ++prev);
+      setDisabled(true);
+    } else {
+      e.target.classList.add('answer-incorrect');
+
+      let answers = e.target.parentElement.children;
+
+      for (let i = 0; i < answers.length; i++) {
+        if (answers[i].value === 'true') {
+          answers[i].classList.add('answer-correct');
+        }
+      }
+
+      setScore((prev) => prev);
+      setDisabled(true);
+    }
+  };
+
+  const handleSubmit = async () => {
+    console.log(`${score}/${questions.length}`);
     const options = {
+      method: 'POST',
       headers: {
+        'Content-Type': 'application/json',
         Authorization: localStorage.getItem('token')
       },
-      method: 'POST'
+      body: JSON.stringify({
+        value: `${score}/${questions.length}`,
+        subjectId: subjectId
+      })
     };
+
+    const response = await fetch('http://localhost:3000/scores', options);
+
+    if (response.status === 201) {
+      Swal.fire({
+        icon: 'success',
+        title: `Congrats on completing the quiz! You scored ${score}/${questions.length}!`
+      });
+      navigate('/progress');
+    }
   };
 
   return (
@@ -99,20 +138,26 @@ const QuizModePage = () => {
                       answers={answers}
                       currentQuestionIndex={currentQuestionIndex}
                       length={questions.length}
+                      disabled={disabled}
+                      setDisabled={setDisabled}
+                      handleClick={handleClick}
                     />
                   </div>
                   <div className='navigation-buttons-container'>
                     <button
                       className='navigation-button'
                       onClick={handleNextQuestion}
-                      hidden={currentQuestionIndex === questions.length - 1}
+                      hidden={
+                        currentQuestionIndex === questions.length - 1 ||
+                        disabled === false
+                      }
                     >
                       Next &gt;
                     </button>
                     <button
                       className='navigation-button'
                       onClick={handleSubmit}
-                      hidden={currentQuestionIndex === questions.length}
+                      hidden={currentQuestionIndex !== questions.length - 1}
                     >
                       Submit
                     </button>

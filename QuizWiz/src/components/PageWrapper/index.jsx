@@ -44,17 +44,15 @@ const PageWrapper = () => {
   };
 
   return (
-    <div className='page-wrapper'>
-      <header className='sticky-header'>
+    <div className='page-wrapper' data-testid="page-wrapper">
+      <header className='sticky-header' data-testid="sticky-header">
         <nav>
           <NavLink to='/'>Home</NavLink>
-          {token && <NavLink to='/mynotes'>My Notes</NavLink>}
+          <NavLink to='/mynotes'>My Notes</NavLink>
           <NavLink to='/progress'>My Progress</NavLink>
-          {token && (
-            <NavLink to='/login' onClick={handleClick}>
+          <NavLink to='/login' onClick={handleClick}>
               Log Out
-            </NavLink>
-          )}
+          </NavLink>
         </nav>
       </header>
     </div>
