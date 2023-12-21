@@ -10,11 +10,18 @@ function Progress() {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`https://quizwiz-api.onrender.com/scores/token/${token}`);
+        const options = {
+          method: 'GET',
+          headers: {
+            'Authorization': `${token}`
+            }
+        };
+        const response = await fetch(`https://quizwiz-api.onrender.com/scores`,options);
 
         if (response.status === 200) {
           const data = await response.json();
-          const sortedData = data.sort((a, b) => b.value - a.value);
+          console.log(data)
+          const sortedData = data.data.sort((a, b) => b.value - a.value);
           setScores(sortedData);
         } else {
           throw new Error('Failed to fetch scores');
