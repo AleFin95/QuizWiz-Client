@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import { DeleteButton } from '../../components';
 
 const MyNotesPage = () => {
@@ -12,7 +13,29 @@ const MyNotesPage = () => {
       method: 'DELETE'
     };
 
-    await fetch(`https://quizwiz-api.onrender.com/notes/${id}`, options);
+    const response = await fetch(
+      `https://quizwiz-api.onrender.com/notes/${id}`,
+      options
+    );
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+
+    if (response.status === 200) {
+      Toast.fire({
+        icon: 'success',
+        title: 'Deleted note successfully'
+      });
+    }
     const updatedNotes = notes.filter((n) => n._id !== id);
     setNotes(updatedNotes);
   }
@@ -20,7 +43,13 @@ const MyNotesPage = () => {
   useEffect(() => {
     async function loadNotes() {
       try {
-        const response = await fetch('https://quizwiz-api.onrender.com/notes');
+        const options = {
+          headers: {
+            Authorization: localStorage.getItem('token')
+          }
+        };
+
+        const response = await fetch('http://localhost:3000/notes', options);
         const data = await response.json();
         setNotes(data);
       } catch (error) {
