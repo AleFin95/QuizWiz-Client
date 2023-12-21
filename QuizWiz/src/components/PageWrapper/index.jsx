@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { useAuth } from '../../contexts';
 
 const PageWrapper = () => {
@@ -21,12 +22,30 @@ const PageWrapper = () => {
     if (response.status == 200) {
       localStorage.removeItem('token');
       setToken('');
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+
+      Toast.fire({
+        icon: 'success',
+        title: 'You have successfully logged out'
+      });
       navigateTo('/');
     }
   };
 
   return (
-    <div className='page-wrapper'>  
+    <div className='page-wrapper'>
+      <header className='sticky-header'>
         <nav>
           <NavLink to='/'>Home</NavLink>
           {token && <NavLink to='/mynotes'>My Notes</NavLink>}
@@ -37,6 +56,7 @@ const PageWrapper = () => {
             </NavLink>
           )}
         </nav>
+      </header>
     </div>
   );
 };
