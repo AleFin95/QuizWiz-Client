@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-const Answers = ({ answers, currentQuestionIndex }) => {
-  const [scores, setScores] = useState([]);
-  const [disabled, setDisabled] = useState(false);
+const Answers = ({
+  answers,
+  currentQuestionIndex,
+  disabled,
+  setDisabled,
+  handleClick
+}) => {
   const [currentAnswers, setCurrentAnswers] = useState([]);
 
   useEffect(() => {
@@ -22,28 +26,6 @@ const Answers = ({ answers, currentQuestionIndex }) => {
     fetchCurrentAnswers();
     console.log();
   }, [currentQuestionIndex]);
-
-  const handleClick = (e, isCorrect) => {
-    if (isCorrect) {
-      e.target.classList.add('answer-correct');
-
-      setScores([...scores, 1]);
-      setDisabled(true);
-    } else {
-      e.target.classList.add('answer-incorrect');
-
-      let answers = e.target.parentElement.children;
-
-      for (let i = 0; i < answers.length; i++) {
-        if (answers[i].value === 'true') {
-          answers[i].classList.add('answer-correct');
-        }
-      }
-
-      setScores([...scores, 0]);
-      setDisabled(true);
-    }
-  };
 
   return (
     <div>
