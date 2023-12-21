@@ -26,8 +26,7 @@ const PageWrapper = () => {
   };
 
   return (
-    <div className='page-wrapper'>
-      <header className='sticky-header'>
+    <div className='page-wrapper'>  
         <nav>
           <NavLink to='/'>Home</NavLink>
           {token && <NavLink to='/mynotes'>My Notes</NavLink>}
@@ -38,7 +37,6 @@ const PageWrapper = () => {
             </NavLink>
           )}
         </nav>
-      </header>
     </div>
   );
 };

@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 
 async function createNote(note) {
   delete note.subject;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      authorization: localStorage.getItem('token')
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      authorization: localStorage.getItem("token"),
     },
-    body: JSON.stringify(note)
+    body: JSON.stringify(note),
   };
-  console.log('options', options);
+  console.log("options", options);
   // const response = await fetch("http://localhost:3000/notes", options);
   const response = await fetch(
-    'https://quizwiz-api.onrender.com/notes',
+    "https://quizwiz-api.onrender.com/notes",
     options
   );
 
@@ -27,28 +27,28 @@ async function createNote(note) {
   }
 
   const responseData = await response.json();
-  console.log('Response data:', responseData);
+  console.log("Response data:", responseData);
 
   return responseData;
 }
 
 async function createSubject(subject) {
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token')
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: localStorage.getItem("token"),
     },
-    body: JSON.stringify(subject)
+    body: JSON.stringify(subject),
   };
   // const response = await fetch("http://localhost:3000/subjects", options);
   const response = await fetch(
-    'https://quizwiz-api.onrender.com/subjects',
+    "https://quizwiz-api.onrender.com/subjects",
     options
   );
 
-  console.log('REspone from create subject=', response);
+  console.log("REspone from create subject=", response);
   if (!response.ok) {
     // Handle error, throw an exception, or return an error object
     throw new Error(`Failed to create subject: ${response.statusText}`);
@@ -60,22 +60,22 @@ async function createSubject(subject) {
   return createdSubjectId;
 }
 
-function NoteForm({ note = '' }) {
+function NoteForm({ note = "" }) {
   useEffect(() => {
     if (note) {
       setFormData({
         title: note.title,
         content: note.content,
-        subject: note.subject
+        subject: note.subject,
       });
     }
   }, [note]);
 
   // Innitial state for the Form
   const initialFormState = {
-    title: '',
-    content: '',
-    subject: ''
+    title: "",
+    content: "",
+    subject: "",
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -89,7 +89,7 @@ function NoteForm({ note = '' }) {
 
     const subjectId = await createSubject({ name: formData.subject });
 
-    console.log('line 97 subjectId= ', subjectId);
+    console.log("line 97 subjectId= ", subjectId);
 
     await createNote(formData);
     setFormData({ ...initialFormState }); // Reset form data
@@ -98,45 +98,47 @@ function NoteForm({ note = '' }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className='form-group'>
-        <label htmlFor='title' className='form-label'>
-          Title
+      <div className="title">
+        <label htmlFor="title" className="form-label">
           <textarea
-            id='title'
-            name='title'
-            className='form-control'
+            id="title"
+            name="title"
+            placeholder="Title"
+            className="form-control"
             onChange={handleChange}
             value={formData.title}
           />
         </label>
       </div>
-      <div className='form-group'>
-        <label htmlFor='content' className='form-label'>
-          Content
-          <textarea
-            id='content'
-            name='content'
-            className='form-control'
-            onChange={handleChange}
-            value={formData.content}
-          />
-        </label>
-      </div>
 
-      <div className='form-group'>
-        <label htmlFor='subject' className='form-label'>
-          Subject
+      <div className="subject">
+        <label htmlFor="subject" className="form-label">
+          
           <textarea
-            id='subject'
-            name='subject'
-            className='form-control'
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+            className="form-control"
             onChange={handleChange}
             value={formData.subject}
           />
         </label>
       </div>
+
+      <div className="content">
+        <label htmlFor="content" className="form-label">
+          <textarea
+            id="content"
+            name="content"
+            placeholder="Write your notes here..."
+            className="form-control"
+            onChange={handleChange}
+            value={formData.content}
+          />
+        </label>
+      </div>
       <div>
-        <button type='submit' className='btn btn-primary mr-2'>
+        <button type="submit" className="save-button">
           Save
         </button>
       </div>
