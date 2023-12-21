@@ -47,7 +47,7 @@ describe('Timer Component', () => {
     const startButton = screen.getByRole('button', { name: /start/i });
     fireEvent.click(startButton);
 
-    // Add assertions for timer starting
+
   });
 
   it('Navigates to the correct route on timer completion', () => {
@@ -65,6 +65,6 @@ describe('Timer Component', () => {
     const startButton = screen.getByRole('button', { name: /start/i });
     fireEvent.click(startButton);
 
-    // Add assertions for navigation to '/learn/addnotes' after timer completion
+
   });
 });
