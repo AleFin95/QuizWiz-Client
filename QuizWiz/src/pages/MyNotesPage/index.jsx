@@ -49,7 +49,7 @@ const MyNotesPage = () => {
           }
         };
 
-        const response = await fetch('http://localhost:3000/notes', options);
+        const response = await fetch('https://quizwiz-api.onrender.com/notes', options);
         const data = await response.json();
         setNotes(data);
       } catch (error) {
@@ -80,10 +80,10 @@ const MyNotesPage = () => {
 
   return (
     <div className='myNotesPage'>
-      {}
-      <h1>myNotesPage</h1>
-
+      <h2>My Notes</h2>
+      <div className='container'>
       <h2>{displayNotes()}</h2>
+      </div>
     </div>
   );
 };
