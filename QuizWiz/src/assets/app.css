@@ -403,11 +403,7 @@ nav a.active {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 15px;
-  background: linear-gradient(
-    to bottom,
-    rgb(119, 119, 119) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: transparent
 }
 .displaytopics::-webkit-scrollbar {
   display: none;
