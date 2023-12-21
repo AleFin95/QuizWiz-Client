@@ -383,8 +383,12 @@ nav a.active {
 }
 
 .search-bar input {
+  margin-top: 30px;
+  margin-left: 15px;
   border-radius: 20px;
   border-style: none;
+  text-align: center;
+  height: 20px;
 }
 
 .search-bar input:active {
@@ -403,11 +407,7 @@ nav a.active {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 15px;
-  background: linear-gradient(
-    to bottom,
-    rgb(119, 119, 119) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: transparent
 }
 .displaytopics::-webkit-scrollbar {
   display: none;
@@ -438,6 +438,7 @@ nav a.active {
   position: fixed;
   top: 10px;
   right: 10px;
+  left: 10px; 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -446,7 +447,7 @@ nav a.active {
 .quiz-icon-container {
   margin-bottom: 10px;
   z-index: 1001;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 
 .quiz-icon {
@@ -457,12 +458,24 @@ nav a.active {
 .quiz-instructions-container {
   display: none;
   flex-direction: column;
-  background-color: rgb(109, 155, 169);
-  padding: 20px;
+  background-color: rgba(109, 155, 169, 0.665);
+  padding: 10px;
+  padding-top: 25px;
+  padding-right: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   border-radius: 10px;
+  border: 5px solid #372da742;
   color: #fff;
+  align-items: flex;
+}
+
+.quiz-instructions-container li {
+    line-height: 1.7; 
+  }
+
+.quiz-instructions-container ol {
+  text-align: left; /* Align list items to the left */
 }
 
 .visible {
@@ -615,4 +628,10 @@ nav a.active {
 .answer[disabled] {
   pointer-events: none;
   opacity: 0.7;
+}
+
+
+/*Quiz instructions component - link stye*/
+.my-notes-link {
+  color: rgb(235, 217, 114); /* Change to your desired color */
 }
