@@ -95,7 +95,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts';
 
 const Timer = ({ flag_page }) => {
-  const [initialMinutes, setInitialMinutes] = useState(0);
+  const [initialMinutes, setInitialMinutes] = useState(1);
   const { remainingSeconds, setRemainingSeconds } = useAuth();
   const [isRunning, setIsRunning] = useState(false);
   const navigate = useNavigate();
