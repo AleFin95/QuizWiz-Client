@@ -49,7 +49,7 @@ const MyNotesPage = () => {
           }
         };
 
-        const response = await fetch('http://localhost:3000/notes', options);
+        const response = await fetch('https://quizwiz-api.onrender.com/notes', options);
         const data = await response.json();
         setNotes(data);
       } catch (error) {
