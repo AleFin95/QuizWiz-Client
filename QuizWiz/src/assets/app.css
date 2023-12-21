@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600&display=swap');
 
 body,
 h1,
@@ -11,7 +11,7 @@ p {
   font-size: 30rem;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   font-weight: 300;
   position: relative;
@@ -25,7 +25,7 @@ body::-webkit-scrollbar {
 
 /* loginPage CSS*/
 .loginPage {
-  background: url("/LandingPage.png") no-repeat center center fixed;
+  background: url('/LandingPage.png') no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   width: 100vw;
@@ -47,16 +47,16 @@ body::-webkit-scrollbar {
   flex-direction: column;
   margin-bottom: 15px;
   border-bottom: 1px solid #e3e3f0;
-backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
-background:#ffffff4c;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: #ffffff4c;
 }
 .login::-webkit-scrollbar {
   display: none;
 }
 
 .login * {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #3b5165;
   outline: none;
   border: none;
@@ -144,7 +144,7 @@ background:#ffffff4c;
 
 /* HomePage CSS*/
 main {
-  background-image: url("/HomePage.png");
+  background-image: url('/HomePage.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -190,7 +190,7 @@ nav {
   top: 0;
   left: 0;
   background: transparent;
-  z-index: 1000; 
+  z-index: 1000;
   height: 50px;
 }
 
@@ -205,7 +205,7 @@ nav a {
   color: rgb(158, 124, 163);
   font-size: 12px;
   font-weight: 600;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -231,7 +231,7 @@ nav a.active {
   color: rgb(125, 88, 131);
   font-size: 15px;
   font-weight: 600;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   letter-spacing: 1px;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
@@ -259,27 +259,26 @@ nav a.active {
 /* AddNotesPage.css */
 
 .addNotesPage {
-  background: url("/AddNotePage.png") center/cover no-repeat;
+  background: url('/AddNotePage.png') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  
 }
 
 .form-control:focus {
-  outline: none; 
+  outline: none;
 }
-.form-control:active{
+.form-control:active {
   transform: translateY(2px);
 }
 
-.form-control .title{
-color: #080710;
+.form-control .title {
+  color: #080710;
 }
-.addNotesPage .title{
+.addNotesPage .title {
   margin-top: 50px;
   color: #ffffff;
 }
@@ -294,6 +293,7 @@ textarea {
   padding-left: 10px;
   padding-top: 10px;
   font-family: 'Poppins';
+  font-family: 'Poppins';
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -302,7 +302,6 @@ textarea {
 .title .form-control {
   color: white !important; /* Replace with your desired color */
 }
-
 
 .content textarea {
   font-size: large;
@@ -318,13 +317,13 @@ textarea {
   border: 0;
   color: #080710;
 }
-.save-button{
+.save-button {
   width: 150px;
   background-color: #e3ffff;
   color: #080710;
   font-size: 13px;
   font-weight: 600;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   border-radius: 25px;
   cursor: pointer;
   margin-top: 10px;
@@ -347,7 +346,7 @@ textarea {
 
 /*Timer page: /learn*/
 .timer {
-  background: url("/TimerPage.png") center/cover no-repeat;
+  background: url('/TimerPage.png') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -406,7 +405,7 @@ textarea {
   color: #080710;
   font-size: 13px;
   font-weight: 600;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   border-radius: 25px;
   cursor: pointer;
   margin-top: 10px;
@@ -470,7 +469,7 @@ textarea {
   font-family: Anton;
 }
 .topics {
-  background: url("/TopicsPage.png") center/cover no-repeat;
+  background: url('/TopicsPage.png') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -490,7 +489,7 @@ textarea {
   resize: none;
   border-radius: 5px;
   border-style: none;
-  text-align: left; 
+  text-align: left;
   margin-top: 5px;
   margin-bottom: 5px;
   background: transparent;
@@ -498,27 +497,24 @@ textarea {
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-family:'Poppins';
+  font-family: 'Poppins';
   font-size: 20px;
   text-align: center;
-  background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 3px );
--webkit-backdrop-filter: blur( 3px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .search-bar input:focus {
-  outline: none; 
+  outline: none;
 }
-
 
 .search-bar input:active {
-  
-  outline: none; 
+  outline: none;
 }
-
 
 .displaytopics {
   margin-top: 20px;
@@ -530,14 +526,14 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   justify-content: center;
   flex-direction: column;
   margin-bottom: 15px;
-  background: transparent
+  background: transparent;
 }
 .displaytopics::-webkit-scrollbar {
   display: none;
 }
 
 .results {
-  background: url("/ResultsPage.png") center/cover no-repeat;
+  background: url('/ResultsPage.png') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -547,7 +543,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .quiz {
-  background: url("/QuizPage.png") center/cover no-repeat;
+  background: url('/QuizPage.png') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -565,9 +561,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   flex-direction: column;
   align-items: flex-end;
   z-index: 1000;
-
 }
-
 
 .quiz-icon-container {
   margin-bottom: 10px;
@@ -576,18 +570,17 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   color: #8b56a5b8;
 }
 .quiz-instructions-container ol {
-text-align: left;
+  text-align: left;
 }
 
 .quiz-icon {
   margin-top: 30px;
   height: 25px;
   cursor: pointer;
-
 }
 /*Quiz instructions component - link stye*/
 .my-notes-link {
-  color: rgb(235, 217, 114); 
+  color: rgb(235, 217, 114);
 }
 
 .quiz-instructions-container {
@@ -602,7 +595,7 @@ text-align: left;
   max-height: 350px; /* Set a maximum height */
   overflow-y: auto;
   backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .quiz-instructions-container::-webkit-scrollbar {
@@ -619,7 +612,7 @@ text-align: left;
 
 /* My notes page */
 .myNotesPage {
-  background: url("/MyNotesPage.png") center/cover no-repeat;
+  background: url('/MyNotesPage.png') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -627,20 +620,21 @@ text-align: left;
   justify-content: center;
   color: #ffffff;
 }
-.container{
+.container {
   height: 450px;
-  overflow-x: hidden; 
-  overflow-y: auto; 
-background: linear-gradient(rgba(197, 129, 129, 0.868));
-width: 80%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(rgba(197, 129, 129, 0.868));
+  width: 80%;
   border-radius: 15px;
-  box-shadow: inset 0 10px 20px rgba(255, 255, 255, 0.459), inset 0 -10px 20px rgba(0, 0, 0, 0.404);
+  box-shadow: inset 0 10px 20px rgba(255, 255, 255, 0.459),
+    inset 0 -10px 20px rgba(0, 0, 0, 0.404);
 }
 .container::-webkit-scrollbar {
   display: none;
 }
 
-.myNotesPage h2{
+.myNotesPage h2 {
   margin-bottom: 10px;
 }
 
@@ -659,12 +653,11 @@ width: 80%;
   background: #372da74c;
   overflow: hidden;
   border-bottom: 1px solid #a9a9f4;
-backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
-background:#372da74c;
-overflow: hidden; 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: #372da74c;
+  overflow: hidden;
 }
-
 
 .note-title {
   flex: 1;
@@ -687,10 +680,10 @@ overflow: hidden;
 .note-title h3,
 .note-content p {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .note-content p {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 12px;
   color: #080710;
 }
@@ -715,7 +708,7 @@ overflow: hidden;
   color: #080710;
   font-size: 13px;
   font-weight: 600;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   border-radius: 25px;
   cursor: pointer;
   margin-top: 10px;
@@ -737,7 +730,14 @@ overflow: hidden;
 
 /* Quiz Page */
 
-.quiz h2{
+.loading-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 100px;
+}
+
+.quiz h2 {
   margin-top: 100px;
 }
 .question-container {
@@ -767,7 +767,7 @@ overflow: hidden;
   color: rgb(158, 124, 163);
   font-size: 18px;
   font-weight: 600;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -803,5 +803,5 @@ overflow: hidden;
   left: 0;
   bottom: 0;
   width: 100%;
-  font-family: "Poppins";
+  font-family: 'Poppins';
 }
