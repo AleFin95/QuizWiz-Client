@@ -35,14 +35,15 @@ function AddNotesPage() {
     .toString()
     .padStart(2, "0")}:${(remainingSeconds % 60).toString().padStart(2, "0")}`;
 
-  return (
-    <div className="addNotesPage">
-      <h1>Add Note</h1>
-      <p>Countdown Timer: {formattedTime}</p>
-      <NoteForm />
-      <LearnInstructionsWrapper />
-    </div>
-  );
+    return (
+      <div className="addNotesPage">
+        <h1></h1>
+        <NoteForm />
+        <LearnInstructionsWrapper />
+        <p className="my-paragraph">Countdown Timer: {formattedTime}</p>
+      </div>
+    );
+    
 }
 
 export default AddNotesPage;
