@@ -52,7 +52,9 @@ const MyNotesPage = () => {
   return (
     <div className='myNotesPage'>
       <h1>myNotesPage</h1>
+      <div className='container'>
       <h2>{displayNotes()}</h2>
+      </div>
     </div>
   );
 };

@@ -528,10 +528,18 @@ textarea {
   justify-content: center;
   color: #ffffff;
 }
+.container{
+  height: 400px;
+overflow: auto;
+background: linear-gradient(rgba(197, 129, 129, 0.868));
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+
 .note-container {
   position: relative;
   width: 70%;
-  border: 2px solid #372da7;
   border-radius: 15px;
   background-color: #372da74c;
   padding: 25px;
@@ -584,17 +592,24 @@ textarea {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #dd90d9;
-  border: 2px solid #490549;
-  border-radius: 50%;
+  width: 40px;
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Poppins";
+  border-radius: 25px;
   cursor: pointer;
-  font-size: 16px;
-  color: #490549;
-  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .delete-button:hover {
-  background-color: #ff0099;
+  background-color: #ad5a8a;
   color: #e9e3e8;
 }
 
