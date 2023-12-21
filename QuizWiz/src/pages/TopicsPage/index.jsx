@@ -15,7 +15,15 @@ const TopicsPage = () => {
   useEffect(() => {
     async function loadTopics() {
       try {
-        const response = await fetch('https://quizwiz-api.onrender.com/subjects');
+        const options = {
+          headers: {
+            Authorization: localStorage.getItem('token')
+          }
+        };
+        const response = await fetch(
+          'https://quizwiz-api.onrender.com/subjects',
+          options
+        );
         const data = await response.json();
         setTopics(data);
       } catch (error) {
