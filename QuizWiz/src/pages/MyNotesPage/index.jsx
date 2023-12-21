@@ -51,6 +51,7 @@ const MyNotesPage = () => {
 
   return (
     <div className='myNotesPage'>
+      {}
       <h1>myNotesPage</h1>
 
       <h2>{displayNotes()}</h2>
