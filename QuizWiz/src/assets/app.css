@@ -420,6 +420,7 @@ textarea {
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  overflow: auto;
 }
 
 .page-title {
@@ -447,11 +448,10 @@ textarea {
 
 .displaytopics {
   margin-top: 20px;
-  height: 200px;
+  height: 250px;
   width: 500px;
   border-radius: 10px;
   backdrop-filter: blur(10px);
-  padding: 25px 35px;
   overflow: auto;
   justify-content: center;
   flex-direction: column;
@@ -490,6 +490,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  z-index: 1000;
 }
 
 .quiz-icon-container {
