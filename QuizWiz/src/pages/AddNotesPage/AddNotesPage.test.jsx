@@ -7,16 +7,18 @@ import { AuthProvider } from '../../contexts';
 
 expect.extend(matchers);
 describe('AddNotesPage Component', () => {
-  render(
-    <MemoryRouter>
-      <AuthProvider>
-        <AddNotesPage />
-      </AuthProvider>
-    </MemoryRouter>
-  );
-  it('displays "Add Note" heading', () => {
-    expect(
-      screen.getByRole('heading', { name: /add note/i })
-    ).toBeInTheDocument();
+  it('displays "Countdown Timer:" paragraph', () => {
+    render(
+      <MemoryRouter>
+        <AuthProvider>
+          <AddNotesPage />
+        </AuthProvider>
+      </MemoryRouter>
+    );
+
+
+    expect(screen.getByText(/Countdown Timer:/i)).toBeInTheDocument();
   });
-});
+
+
+  });

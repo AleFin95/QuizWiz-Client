@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { LearnInstructionsWrapper } from "../../components";
@@ -38,7 +39,7 @@ function AddNotesPage() {
     return (
       <div className="addNotesPage">
         <h1></h1>
-        <NoteForm />
+        <NoteForm id="note-form" />
         <LearnInstructionsWrapper />
         <p className="my-paragraph">Countdown Timer: {formattedTime}</p>
       </div>
