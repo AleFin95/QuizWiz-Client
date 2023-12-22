@@ -29,7 +29,7 @@ const QuizInstructions = () => {
   <ol>
     <li> <b>Select a Topic:</b> <br/>Choose a topic from your notes to be quizzed on.</li>
     <li> <b>Answer Questions:</b> <br/>Each quiz consists of questions related to the<br/> selected topic.</li>
-    <li> <b>Time Limit:</b> <br/>You have 5 minutes to answer each question,<br/> so stay focused!</li>
+    <li> <b>Time Limit:</b> <br/>You have 20 minutes to answer the questions,<br/> so stay focused!</li>
     <li> <b>Varying Questions:</b> <br/>The number of questions may vary based on <br/>the length of your notes' content.</li>
     <li> <b>Track Your Progress:</b> <br/>Check your past quiz results in the leaderboard<br/> and see how you've improved over time.</li>
   </ol>

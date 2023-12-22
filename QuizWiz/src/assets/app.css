@@ -607,6 +607,10 @@ input[type='range']::before {
   justify-content: center;
   color: #ffffff;
   overflow: auto;
+ 
+}
+
+.topic-label-container h3 {
   font-size: 30px;
 }
 
