@@ -104,7 +104,7 @@ const QuizModePage = () => {
       })
     };
 
-    const response = await fetch('http://localhost:3000/scores', options);
+    const response = await fetch('https://quizwiz-api.onrender.com/scores', options);
 
     if (response.status === 201) {
       Swal.fire({

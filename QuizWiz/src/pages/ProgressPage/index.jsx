@@ -23,7 +23,9 @@ function Progress() {
 
         if (response.status === 200) {
           const data = await response.json();
-          const sortedData = data.data.sort((a, b) => b.value - a.value);
+          console.log(data)
+          const sortedData = data.sort((a, b) => b.value - a.value);
+          console.log(sortedData)
           setScores(sortedData);
         } else {
           throw new Error('Failed to fetch scores');
