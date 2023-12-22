@@ -17,7 +17,7 @@ function Progress() {
           }
         };
         const response = await fetch(
-          `https://quizwiz-api.onrender.com/scores`,
+          `https://quizwiz-api.onrender.com/scores/user`,
           options
         );
 
