@@ -759,7 +759,7 @@ input[type='range']::before {
 
 .myNotesPage h2 {
   color: #080710;
-  margin-bottom: 10px;
+  margin-top: 25px;
 }
 
 .note-container {
