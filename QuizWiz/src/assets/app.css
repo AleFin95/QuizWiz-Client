@@ -341,10 +341,13 @@ textarea {
     rgb(255, 255, 255) 0%,
     rgba(0, 0, 0, 0) 100%
   );
-  overflow: hidden;
+  overflow: auto;
   padding: 8px;
   border: 0;
   color: #080710;
+}
+.content textarea::-webkit-scrollbar {
+  display: none;
 }
 .save-button {
   width: 150px;
