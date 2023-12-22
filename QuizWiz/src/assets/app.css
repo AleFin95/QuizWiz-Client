@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@100;200;300;400;600&family=Single+Day&display=swap');
 
 * {
-  font-family: 'LazyDog';
-  src: url('/QuizWiz/src/assets/Lazydog.otf');
+  font-family: 'single day';
 }
 
 body,
@@ -215,7 +214,7 @@ nav a {
   color: rgb(158, 124, 163);
   font-size: 12px;
   font-weight: 600;
-  /* font-family: 'Poppins'; */
+  font-family: 'Poppins';
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -273,16 +272,18 @@ nav a.active {
 }
 
 .title textarea {
+  margin-top: 15px;
   font-size: xx-large;
 }
 
 .subject textarea {
   font-size: large;
+
 }
 
 .title textarea:focus,
 .subject textarea:focus {
-  text-decoration: underline;
+ color: white;
 }
 
 .title,
@@ -323,10 +324,9 @@ textarea {
   resize: none;
   border-radius: 5px;
   border-style: none;
-  text-align: left; /* Center text horizontally */
+  text-align: left;
   margin-bottom: 5px;
   background: transparent;
-  color: rgb(255, 255, 255);
   padding-left: 10px;
   padding-top: 10px;
   /* font-family: 'Poppins'; */
@@ -352,7 +352,7 @@ textarea {
   color: #080710;
   font-size: 13px;
   font-weight: 600;
-  /* font-family: 'Poppins'; */
+  font-family: 'Poppins';
   border-radius: 25px;
   cursor: pointer;
   margin-top: 10px;
@@ -383,6 +383,7 @@ textarea {
   justify-content: center;
   color: #ffffff;
   gap: 30px;
+  
 }
 
 .timer h1 {
@@ -414,6 +415,7 @@ textarea {
   /* color: #ffffff; */
   color: #3b5165;
   /* font-family: Anton; */
+  
 }
 
 input[type='range'] {
@@ -439,7 +441,7 @@ input[type='range']::-webkit-slider-thumb {
   width: 3em;
   height: 3em;
   margin: 0.5em 0;
-  background: hsl(27, 98%, 50%);
+  background: hsl(27, 71%, 57%);
   border-radius: 100%;
 
   /* The inset shadow gives depth and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
@@ -483,6 +485,7 @@ input[type='range']::-moz-range-track {
   width: 100%;
   height: 4em;
   padding: 0 1em;
+  padding-left: 50px;
   border-radius: 2em;
   box-shadow: inset 0.6em 1em 10px rgba(0, 0, 0, 0.15),
     inset -0.6em -1em 10px rgba(255, 255, 255, 0.415);
@@ -519,10 +522,10 @@ input[type='range']::before {
 .timer button {
   width: 150px;
   background-color: #ffffff;
-  color: #080710;
+  color: #362338;
   font-size: 13px;
   font-weight: 600;
-  /* font-family: 'Poppins'; */
+  font-family: 'Poppins';
   border-radius: 25px;
   cursor: pointer;
   margin-top: 10px;
@@ -531,6 +534,7 @@ input[type='range']::before {
   border: none;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .timer button:hover {
@@ -549,6 +553,37 @@ input[type='range']::before {
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
+
+/* CSS for h2 in Quiz mode */
+.timer h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  color: #333; /* Text color */
+}
+
+/* CSS for .timer container */
+.timer {
+  text-align: center; /* Center the content */
+}
+
+/* CSS for input[type="range"] */
+.timer input[type="range"] {
+  width: 400px; /* Adjust the width as needed */
+  height: 15px;
+  background: #303030;
+  outline: none;
+  border-radius: 15px;
+  margin: 0 auto; /* Center the input horizontally */
+  display: block; /* Make it a block element */
+}
+
+/* CSS for div displaying Set Minutes */
+.timer div {
+  margin-top: 10px; /* Add spacing between the input and text */
+  font-size: 1.5em; /* Adjust the font size as needed */
+  color: #393939; /* Text color */
+}
+
+
 
 .timer h2 {
   font-size: 70px;
