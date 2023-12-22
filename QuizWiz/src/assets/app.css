@@ -12,8 +12,13 @@ p {
   padding: 0;
 }
 .h2 {
-  font-size: 30rem;
+  font-size: 40rem;
 }
+h1,
+h2{
+  font-size: 30px;
+}
+
 body {
   /* font-family: 'Poppins', sans-serif; */
   text-align: center;
@@ -172,7 +177,7 @@ main {
 
 h1 {
   font-family: Anton;
-  font-size: 7em;
+  font-size: 13em;
   color: rgb(255, 255, 255);
   font-weight: bold;
   margin: 0;
@@ -212,7 +217,7 @@ nav a {
   border: none;
   border-radius: 10px;
   color: rgb(158, 124, 163);
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 600;
   font-family: 'Poppins';
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
@@ -238,9 +243,9 @@ nav a.active {
   border: none;
   border-radius: 25px;
   color: rgb(125, 88, 131);
-  font-size: 15px;
+  font-size: 25px;
   font-weight: 600;
-  /* font-family: 'Poppins'; */
+  font-family: 'Poppins';
   letter-spacing: 1px;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
@@ -341,7 +346,6 @@ textarea {
     rgb(255, 255, 255) 0%,
     rgba(0, 0, 0, 0) 100%
   );
-  overflow: hidden;
   padding: 8px;
   border: 0;
   color: #080710;
@@ -520,22 +524,23 @@ input[type='range']::before {
 }
 
 .timer button {
-  width: 150px;
+  width: 200px;
+  height: 60px;
+  padding: 15px 30px;
   background-color: #ffffff;
-  color: #362338;
-  font-size: 13px;
+  color: rgb(125, 88, 131);
   font-weight: 600;
   font-family: 'Poppins';
+  font-size: 20px;
   border-radius: 25px;
+  letter-spacing: 1px;
   cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding: 10px;
   border: none;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 
 }
+
 
 .timer button:hover {
   box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
@@ -598,6 +603,7 @@ input[type='range']::before {
   justify-content: center;
   color: #ffffff;
   overflow: auto;
+  font-size: 30px;
 }
 
 .page-title {
@@ -620,7 +626,7 @@ input[type='range']::before {
   padding-top: 10px;
   padding-bottom: 10px;
   /* font-family: 'Poppins'; */
-  font-size: 20px;
+  font-size: 35px;
   text-align: center;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -719,7 +725,10 @@ input[type='range']::before {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
-
+.quiz-instructions-container h2 {
+  color: white;
+  font-size: 35px;
+}
 .quiz-instructions-container::-webkit-scrollbar {
   display: none;
 }
@@ -760,6 +769,11 @@ input[type='range']::before {
 .myNotesPage h2 {
   color: #080710;
   margin-bottom: 10px;
+  font-size: 50px;
+}
+
+.myNotesPage h3 {
+  font-size: 40px;
 }
 
 .note-container {
@@ -810,6 +824,7 @@ input[type='range']::before {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 12px;
   color: #080710;
+  font-weight: 400;
 }
 
 .note-title,
@@ -869,6 +884,9 @@ input[type='range']::before {
   flex-flow: column;
   gap: 40px;
 }
+.question-container h3{
+  font-size: 25px
+}
 
 /* AnswersBox */
 .answers {
@@ -890,10 +908,12 @@ input[type='range']::before {
   column-gap: 1rem;
   cursor: pointer;
   display: flex;
-  font-size: 100%;
+  font-size: 30px;
+  width: 40vh;
   font-weight: 700;
   line-height: 24px;
   margin: 0;
+  justify-content: center;
   outline: 2px solid transparent;
   padding: 1rem 1.5rem;
   text-align: center;

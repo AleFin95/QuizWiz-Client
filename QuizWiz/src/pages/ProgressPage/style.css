@@ -4,6 +4,12 @@
   padding-top: 100px;
 }
 
+h2 {
+    color: #080710;
+    margin-bottom: 10px;
+    font-size: 50px;
+  }
+  
 .score{
     width: 74px;
 }
@@ -38,4 +44,5 @@
     text-align: center;
     
 }
-  
+
+
